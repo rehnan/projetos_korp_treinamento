@@ -1,0 +1,35 @@
+﻿Try... Except
+-> Utilizado para responder a um erro específico
+-> A parte excpet do bloco só é executada quando ocorre um erro no códigoprotegido (try)
+-> Sintaxe:
+	Try
+		{Comando que você deseja proteger}
+	Except
+		{Comando de tratamento de erros}
+	end;
+
+Try... Finally
+-> Usada para proteção de recursos;
+-> Sempre executa a parte do finally do bloco
+Sintexe:
+	{Aloca os recursos}
+	Try
+		{Comandos que usm os recursos}
+	Finally
+		{Libera os recursos} (Sempre executa dando ou não, exceção ) 
+	end;
+
+
+Exceções
+-> Após ser tratado, o objeto da eceção é destruído
+-> Raise - mantém o objeto de exceção ativo
+-> Raie - Também pode ser usado para forçar uma exceção
+	raise EDatabaseError.Create('Erro ao alterar registro.');
+-> Podemos criar exceções personlaizadas
+	Type
+	   EInvalidUser = class(Exception);
+	   raise EInvalidUser.Create('Você não tem acesso a essa operação');
+
+
+
+Alt+F11 para incluir USES externas

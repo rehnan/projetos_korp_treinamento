@@ -1,0 +1,14 @@
+unit uSujeito;
+
+interface
+
+type
+  ISujeito = Interface(IInterface)['{92B5257A-5A05-45E6-8C93-6616AD11B467}']
+    procedure incluiObservador();
+    procedure removeObservador();
+    procedure notificar();
+  end;
+
+implementation
+
+end.

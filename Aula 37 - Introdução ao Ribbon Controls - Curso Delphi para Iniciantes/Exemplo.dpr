@@ -1,0 +1,16 @@
+program Exemplo;
+
+uses
+  Vcl.Forms,
+  Unit1 in 'Unit1.pas' {Form1},
+  Unit2 in '..\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Unit2.pas',
+  UCliente in '..\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\UCliente.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

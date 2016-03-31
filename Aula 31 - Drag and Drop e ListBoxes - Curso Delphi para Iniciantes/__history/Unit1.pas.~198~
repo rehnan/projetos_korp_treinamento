@@ -1,0 +1,115 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls;
+
+type
+    TForm1 = class(TForm)
+    LbxTecnologias: TListBox;
+    LbxHabilidades: TListBox;
+    LabelTecnologias: TLabel;
+    LabelHabilidades: TLabel;
+    SBtnAddTecnologia: TSpeedButton;
+    SBtnAddAllTecnologias: TSpeedButton;
+    SBtnRemoveTecnologia: TSpeedButton;
+    SBtnRemveAllTecnologias: TSpeedButton;
+    procedure AddItem(Index_Selecionado: Integer; LbxOrigem, LbxDestino: TListBox);
+    procedure AddTodosItems(LbxOrigem, LbxDestino: TListBox);
+    procedure SBtnAddTecnologiaClick(Sender: TObject);
+    procedure SBtnRemoveTecnologiaClick(Sender: TObject);
+    procedure SBtnAddAllTecnologiasClick(Sender: TObject);
+    procedure SBtnRemveAllTecnologiasClick(Sender: TObject);
+    procedure LbxTecnologiasDragDrop(Sender, Source: TObject; X, Y: Integer);
+    procedure LbxHabilidadesDragOver(Sender, Source: TObject; X, Y: Integer;
+      State: TDragState; var Accept: Boolean);
+    procedure LbxTecnologiasDragOver(Sender, Source: TObject; X, Y: Integer;
+      State: TDragState; var Accept: Boolean);
+    procedure LbxHabilidadesDragDrop(Sender, Source: TObject; X, Y: Integer);
+    
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+// Adicionar Item em uma ListBox. Parâmetros: index do item; ListBox de Origem; ListBox de Destino
+procedure TForm1.AddItem(Index_Selecionado: Integer; LbxOrigem, LbxDestino: TListBox);
+begin
+    if not (Index_Selecionado = -1) then
+      begin
+        LbxDestino.Items.Add(LbxOrigem.Items[Index_Selecionado]);
+        //LbxOrigem.Items.Delete(Index_Selecionado);
+        LbxOrigem.DeleteSelected
+
+      end;
+end;
+
+// Adicionar Todos os Items em uma ListBox. Parâmetros: ListBox de Origem; ListBox de Destino
+procedure TForm1.AddTodosItems(LbxOrigem, LbxDestino: TListBox);
+var
+  Item: String;
+begin
+     for Item in LbxOrigem.Items do
+     begin
+        LbxDestino.Items.Append(Item);
+     end;
+     LbxOrigem.Items.Clear;
+end;
+
+(* Events Buttons CLick Application *)
+procedure TForm1.SBtnAddTecnologiaClick(Sender: TObject);
+begin
+  TForm1.AddItem(LbxTecnologias.ItemIndex, LbxTecnologias, LbxHabilidades);
+end;
+
+procedure TForm1.SBtnRemoveTecnologiaClick(Sender: TObject);
+begin
+  TForm1.AddItem(LbxHabilidades.ItemIndex, LbxHabilidades, LbxTecnologias);
+end;
+
+procedure TForm1.SBtnRemveAllTecnologiasClick(Sender: TObject);
+begin
+   TForm1.AddTodosItems(LbxHabilidades, LbxTecnologias);
+end;
+
+procedure TForm1.SBtnAddAllTecnologiasClick(Sender: TObject);
+begin
+  TForm1.AddTodosItems(LbxTecnologias, LbxHabilidades);
+end;
+
+(* Events DragDrop and DragOver Application *)
+procedure TForm1.LbxHabilidadesDragDrop(Sender, Source: TObject; X, Y: Integer);
+begin
+     
+     SBtnRemoveTecnologiaClick(Sender);
+end;
+
+procedure TForm1.LbxHabilidadesDragOver(Sender, Source: TObject; X, Y: Integer;
+  State: TDragState; var Accept: Boolean);
+begin
+    Accept := Source <> Sender;
+end;
+
+procedure TForm1.LbxTecnologiasDragDrop(Sender, Source: TObject; X, Y: Integer);
+begin
+      SBtnAddTecnologiaClick(Sender);
+end;
+
+procedure TForm1.LbxTecnologiasDragOver(Sender, Source: TObject; X, Y: Integer;
+  State: TDragState; var Accept: Boolean);
+begin
+    Accept := Source <> Sender;
+end;
+
+end.

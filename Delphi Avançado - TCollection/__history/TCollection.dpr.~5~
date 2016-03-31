@@ -1,0 +1,20 @@
+program TCollection;
+
+uses
+  Vcl.Forms,
+  FrmMain in 'FrmMain.pas' {Form1},
+  uProduto in 'uProduto.pas',
+  uSetProduto in 'uSetProduto.pas',
+  uObservador in 'uObservador.pas',
+  uSujeito in 'uSujeito.pas',
+  FrmObservador in 'FrmObservador.pas' {Form2};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.Run;
+end.

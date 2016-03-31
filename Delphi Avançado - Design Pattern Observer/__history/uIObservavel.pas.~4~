@@ -1,0 +1,15 @@
+unit uIObservavel;
+
+interface
+
+type
+  IObservavel = interface;
+
+  IObservavel = interface
+      ['{BC270576-0FCB-4B0B-A486-849AA6A0EF9D}']
+
+  end;
+
+implementation
+
+end.

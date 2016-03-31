@@ -1,0 +1,7 @@
+unit Unit2; (* Nome físico do arquivo *)
+
+interface
+
+implementation
+
+end.

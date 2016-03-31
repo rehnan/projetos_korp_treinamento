@@ -1,0 +1,234 @@
+
+
+
+vocês desenvovlem aplicações firemonkey ou vlc?
+variáveis published?
+freeAndNil?
+
+F11 - Object Inspect
+F12 - Trade Screen Development 
+Crtl+alt+P - Pallet
+Shift+Alt+F11 -Struct 
+Crtl+Alt+F11 - Project Manager
+
+korp!4518
+
+Ctrl+shift+T = Comentários de TO-DO
+Ctrl+J = Templates prontos de operações condicionais e lanços de repetição
+
+Ctrl+shift+número - Define código de navegação por linhas
+Ctrl+number = navega nas linhas definidas
+
+REFACTORING
+
+Comentários Delphi:]
+
+// Comenta linha inteira
+(* Comenta todo o texto *)
+{Comenta todo o texo entre marcadores}
+
+
+Parâmetros e Referências Functions
+
+Function com parâmetros estáticos 
+
+	function (10, 20: Integer) : integer;
+
+Function com parâmetros por referência com const 
+para garantir ue os valores passados como parametros 
+não serao alterados dentro da função:
+var
+   a, b: Integer;
+   a := 10;
+   b := 20;	
+   function FForm4.Somar2(const a, b: Integer): integer 
+
+
+Function com parâmetros por referência:
+var
+   a, b: Integer;
+   a := 10;
+   b := 20;	
+   function FForm4.Somar2(var a, b: Integer): integer 
+
+Aula 18 - Comandos With e Estrutura de DEcisão
+
+With
+
+If <condição> then
+begin
+
+end
+else
+begin
+
+end;
+
+case <condição> of   (a condição deve ser um número interi
+  1: doSomenthing();
+  2..5: begin
+	   doSomenthing();
+	end
+  else
+	default();		
+end;
+
+Aula 19 - Repeat, While, For, For in
+- Repeat Until (Do-while)
+	O teste é realizado no final de cada iteração 
+	Example: 
+		x := 0;
+		repeat
+			ShowMessage('contador');
+		Inc(x)
+		until (x < 3);
+
+- While Do (While)
+	O teste é realizado antes de começar a iteração
+	Example:
+		x := 0;
+		while x < 3 do 
+		begin
+		  ShowMessage('sjdf');
+		  Inc(x);
+		end;
+- For do
+	O número de iteração é conhecido e determinado (For)
+	Example:
+		I: Integer;
+		for I := 0 to 3 do     (Detalhe: a estrutura for inclui a contagem 3, ou seja, fará 4 repetições)
+		begin
+		  bloco de código
+		end;
+	Example Decrement
+	I: Integer;
+		for I := 10 downto -10 do     (Detalhe: a estrutura for inclui a contagem 3, ou seja, fará 4 repetições)
+		begin
+		  bloco de código
+		end;
+Breake E Continue
+
+Breake - Quebra laço e sai da estrutura de repetição
+Continue - Pula para a continuação do loop da estrutura
+Examples:
+I: Integer;
+for I  := to 10 do
+  begin
+	if I mod 2 = 0 then continue;
+	ShowMessage('É Impar');
+	if I > 5 then break;
+  end;
+end;
+
+For in Example
+for MyElement in MyList do
+begin
+
+end;
+
+
+Por padrão, todos os métodos de uma classe são estáticos, 
+a menos que você indique que são virtuais através das palavras-chave virtual ou dynamic
+
+dynamic e virutal são a mesma coisa
+
+inherited: 
+chamar funcionalidades da classe base 
+
+construct 
+
+type TMinhaClasse = class(TObject) private protected public published end; 
+
+Private – Membros definidos com esse especificador são visíveis somente na classe atual e classes “amigas” (friendly classes), ou seja, classes declaradas na mesma unit;
+
+Protected - Visível somente na classe atual, descendentes e por classes amigas;
+
+Public - Visível a partir de qualquer outra classe;
+
+Published - Visível a partir de qualquer outra classe, ativando suporte à RTTI, com a principal finalidade de serem vistas no Object Inpector.
+
+strict private
+
+
+Heranças de Componentes:
+TObject
+ -> TPersistent
+    -> TComponent
+         -> TControl
+             -> TGraphicControl
+             -> TWinControl
+
+Criando um novo pacote e um novo componente
+
+Um pacote permite, entre outras coisas, que uma aplicação fique “modularizada”. 
+Pacotes podem diminuir o tamanho do seu executável final e auxiliar na distribuição de atualizações. 
+Um pacote, depois de compilado, é um arquivo .bpl (um tipo especial de .dll), 
+e pode ser de 3 tipos: RunTime, Design-Time e RunTime & Design-Time. 
+A extensão do arquivo-fonte do projeto é .dpk. 
+A título de curiosidade, o suporte a pacotes surgiu no Delphi 3.
+
+Interfaces: 
+
+IInterface = interface 
+	// para gerar o GUID abaixo, aperte SHIFT-CTRL+G
+	['{00000000-0000-0000-C000-000000000046}'] 
+	function QueryInterface(const IID: TGUID; out Obj): HResult; stdcall; 
+	function _AddRef: Integer; stdcall; function _Release: Integer; stdcall; 
+end; 
+
+Os métodos _AddRef e _Release definem o mecanismo de contagem de referência. 
+Isso significa que você não precisa liberar um objeto que implementa IInterface. 
+QueryInterface faz solicitações dinamicamente a um objeto para obter uma referência 
+para as interfaces que ele suporta.
+
+
+DLLs vs. BPLs 
+Uma DLL centraliza código que pode ser utilizado por vários aplicativos. 
+É exatamente isso que a torna poderosa, quando retiramos códigos de aplicativos e 
+os colocamos em uma área compartilhada que outros podem acessar. Sem dúvida alguma o 
+melhor exemplo de uso de uma DLL está na própria API dos Windows que é composta por várias DLLs. 
+
+É possível inserir em uma DLL um formulário Delphi e reutilizá-lo, outro uso comum é armazenar 
+arquivos de recursos como imagens. Mas antes de comparar uma DLL com uma BPL temos que entender 
+as duas maneiras de se linkar código em um executável: de forma estática ou dinâmica. 
+
+Operador ternário com delhpi
+if condição then
+  var := x
+else
+  var := y;
+1
+var := ifthen(condição, x,y);
+
+Tipo Variant? Recebe qualquer tipo de dados primitivos?
+
+Tipos Variant podem suportar todos os tipos de dados simples como Inteiros, 
+Ponto Flutuantes, Booleanos, Strings, Data e Hora, Moeda e Objetos OLE Automation. 
+Variant´s não podem fazer referência a Objetos do Object Pascal nem a Ponteiros. Variant´s 
+também podem fazer referência a um Array Não-Homogêneo cujos elementos podem fazer referência 
+a qualquer um dos dados citados acima, inclusive a Arrays de Variant´s.
+
+
+
+Design Pattern Observer
+
+A classe Observable nada mais faz do que monitorar todos os observadores e os 
+notificar sobre alguma alteração no estado
+Observable Methods
+
+addObserver()
+deleteObserver()
+notifyObservers()
+setChanged()
+
+
+A interface Observer é como se fosse a nossa classe Observer definida anteriormente, 
+essa interface ainda possui um método update() que será chamado pelo Subject quando o 
+estado de Subject for alterado. No método update() será passado Somo parâmetro o Subject 
+(quem está fazendo a notificação) ou ainda será passado o Subject e os dados para serem 
+processados pelo Obsever. Outra forma de trabalhar seria chamar update() passando apenas 
+o objeto Subject e esperar que o observador “puxe” os dados da Subject, dessa maneira não 
+passaríamos nenhum dado para o Observer e sim esperaríamos que ele pegasse os dados diretamente 
+no Subject que foi passado.
+
+

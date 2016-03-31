@@ -1,0 +1,142 @@
+unit uTTransporteArquivoTexto;
+
+interface
+
+uses
+  IdMessage,
+  IdIOHandler,
+  IdExplicitTLSClientServerBase,
+  IdSMTP,
+  IdText,
+  IdSSLOpenSSL,
+  System.SysUtils,
+  Vcl.Dialogs,
+  uITransporte;
+
+type
+  TTransporteArquivoTexto = class(TInterfacedObject, ITransporte)
+    private
+      Fdiretorio: String;
+      Fservidor: String;
+      Fporta: String;
+      Fusuario: String;
+      Fsenha: String;
+      Fsmtp: TIdSMTP;
+      Fssl: Boolean;
+      FIdSSL: TIdSSLIOHandlerSocketOpenSSL;
+
+      procedure SetServidor(const Value: String);
+      procedure SetPorta(const Value: String);
+      procedure SetUsuario(const Value: String);
+      procedure SetSenha(const Value: String);
+      procedure SetSmtp(const Value: TIdSMTP);
+      procedure SetSsl(const Value: Boolean);
+      procedure SetEmail(const Value: TIdMessage);
+      procedure SetIdSSL(const Value: TIdSSLIOHandlerSocketOpenSSL);
+      procedure Setdiretorio(const Value: String);
+
+    public
+      property servidor : String read Fservidor write Setservidor;
+      property porta : String read Fporta write Setporta;
+      property usuario : String read Fusuario write SetUsuario;
+      property senha : String read Fsenha write SetSenha;
+      property smtp : TIdSMTP read Fsmtp write SetSmtp;
+      property ssl : Boolean read Fssl write SetSsl;
+      property IdSSL : TIdSSLIOHandlerSocketOpenSSL read FIdSSL write SetIdSSL;
+
+      constructor Create(const diretorio, servidor, porta : String; const ssl : Boolean);
+      procedure AplicarConfiguracoes();
+      procedure Enviar(const email: TIdMessage);
+      property diretorio : String read Fdiretorio write Setdiretorio;
+  end;
+
+implementation
+
+{ TTransporteArquivoTexto }
+
+constructor TTransporteArquivoTexto.Create(const diretorio, servidor, porta : String; const ssl : Boolean);
+begin
+  inherited Create;
+  Setdiretorio(diretorio);
+  SetServidor(servidor);
+  SetPorta(porta);
+  SetSsl(ssl);
+  smtp := TIdSMTP.create(nil);
+  AplicarConfiguracoes;
+end;
+
+procedure TTransporteArquivoTexto.Enviar(const email: TIdMessage);
+var
+  arquivo: TextFile;
+begin
+   Assign(arquivo, diretorio);
+   if FileExists(diretorio) then
+    Append(arquivo)
+   else
+    Rewrite(arquivo);
+   Try
+      //código de gravação de texto no arquivo
+   finally
+     CloseFile(arquivo);
+     ShowMessage('Arquivo Salvo!!');
+   end;
+end;
+
+procedure TTransporteArquivoTexto.AplicarConfiguracoes;
+begin
+  IdSSL := TIdSSLIOHandlerSocketOpenSSL.Create( nil );
+  smtp.IOHandler := IdSSL;
+  smtp.Host := servidor;
+  smtp.Port := 25;
+  smtp.Authenticate;
+  if ssl = True then smtp.AuthType := satSASL
+  else smtp.AuthType := satDefault;
+end;
+
+procedure TTransporteArquivoTexto.Setdiretorio(const Value: String);
+begin
+  Fdiretorio := Value;
+end;
+
+procedure TTransporteArquivoTexto.SetEmail(const Value: TIdMessage);
+begin
+  Femail := Value;
+end;
+
+procedure TTransporteArquivoTexto.SetIdSSL(
+  const Value: TIdSSLIOHandlerSocketOpenSSL);
+begin
+  FIdSSL := Value;
+end;
+
+procedure TTransporteArquivoTexto.Setporta(const Value: String);
+begin
+  Fporta := Value;
+end;
+
+procedure TTransporteArquivoTexto.SetSenha(const Value: String);
+begin
+  Fsenha := Value;
+end;
+
+procedure TTransporteArquivoTexto.Setservidor(const Value: String);
+begin
+  Fservidor := Value;
+end;
+
+procedure TTransporteArquivoTexto.SetSmtp(const Value: TIdSMTP);
+begin
+  FSmtp := Value;
+end;
+
+procedure TTransporteArquivoTexto.SetSsl(const Value: Boolean);
+begin
+  Fssl := Value;
+end;
+
+procedure TTransporteArquivoTexto.SetUsuario(const Value: String);
+begin
+  Fusuario := Value;
+end;
+
+end.

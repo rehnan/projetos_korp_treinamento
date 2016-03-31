@@ -1,0 +1,105 @@
+unit uSetProduto;
+
+interface
+
+uses
+  System.Classes, System.SysUtils,Vcl.Dialogs, uProduto, uSujeito, uObservador;
+
+type
+  EItemExists = Exception;
+  TObservado = class(TInterfacedObject, ISujeito)
+    private
+      Fobservador: IObservador;
+    public
+      procedure incluirObservador(const obs: IObservador);
+      procedure removerObservador();
+      procedure notificarObservadores();
+      property observador : IObservador read Fobservador write incluirObservador;
+  end;
+  
+  TSetProduto = class(TCollection)
+    private
+      Fobservado: TObservado;
+      function getItem(index : Integer) : TProduto;
+      procedure SetObservado(const obsrvd: TObservado);
+      
+    public
+      property observado : TObservado read Fobservado write SetObservado;
+      property Item[Index: Integer]: TProduto read GetItem;
+      function Add: TProduto;
+      function AddProduto(const pCodigo: Integer; const pNome: String; const pPreco: Real): TProduto;
+
+      procedure removeProduto(index: Integer);
+      function getProduto (pCodigo: Integer): Integer;
+      
+  end;
+
+implementation
+
+function TSetProduto.Add: TProduto;
+begin
+   Result := inherited Add as TProduto;
+end;
+
+procedure TSetProduto.removeProduto(index: Integer);
+begin
+   inherited Delete(index);
+end;
+
+
+
+procedure TSetProduto.SetObservado(const obsrvd: TObservado);
+begin
+  Fobservado := obsrvd;
+  Fobservado.observador :=  .
+end;
+
+
+{O método Add, além de adicionar o item na coleção, retorna o próprio item adicionado.}
+function TSetProduto.AddProduto(const pCodigo: Integer; const pNome: String; const pPreco: Real): TProduto;
+begin
+  if getProduto(pCodigo) <> -1 then
+    raise EItemExists.Create('Código de Item já cadastrado!');
+
+  observado.notificarObservadores();
+  Result := inherited Add as TProduto;
+  Result.Setcodigo(pCodigo);
+  Result.Setnome(pNome);
+  Result.Setpreco(pPreco);
+end;
+
+function TSetProduto.GetItem(index: Integer): TProduto;
+begin
+  Result := inherited Items[index] as TProduto;
+end;
+
+function TSetProduto.getProduto(pCodigo: Integer): integer;
+var i: integer;
+begin
+  Result := -1;
+  for i := 0 to Count - 1  do
+  begin
+    if (pCodigo = GetItem(i).Getcodigo) then
+    Result := i;
+  end;
+end;
+
+{ Implementação do métodos da interface do Observado }
+
+procedure TObservado.removerObservador();
+begin
+  ShowMessage('Remover Observador!');
+end;
+
+procedure TObservado.notificarObservadores();
+begin
+  ShowMessage('Notificar!');
+end;
+
+procedure TObservado.incluirObservador(const obs: IObservador);
+begin
+  ShowMessage('Incluir Observador!');
+  Self.observador := obs;
+end;
+
+end.

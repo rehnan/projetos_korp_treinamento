@@ -1,0 +1,28 @@
+unit uBalanco;
+
+interface
+
+type
+  TBalanco = class
+    private
+      BalancoIniciado: Boolean;
+    public
+      procedure IniciarBalanco;
+      procedure FinalizarBalanco;
+  end;
+
+implementation
+
+{ TBalanco }
+
+procedure TBalanco.FinalizarBalanco;
+begin
+
+end;
+
+procedure TBalanco.IniciarBalanco;
+begin
+
+end;
+
+end.

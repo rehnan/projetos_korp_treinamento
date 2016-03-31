@@ -1,0 +1,29 @@
+Databases:
+
+-> TBDESession (Tecnologia ultrapassada)
+	-> TTable : Acessar uma tabela qualquer do banco de dados conectado;
+	-> TQuery : Realizar um consulta de dados qualquer no banco conectado
+	-> TStoreProc : Conec
+-> TIBDatabase (Componente de conexão específico para InterBase)
+	->IBTabel : Conectar em uma tabela
+	-> IBQuery : realizar consultas
+	-> IBStoreProc
+
+-> TADOConnection ()
+	-> Necessita de um provider OLE DB para o banco específico
+	-> ADOTable: Componente pra acessar uma tabela 
+	-> ADOQUery : Executar um comando qualquer em um banco de dados	
+	-> ADOStoreProc : Acessar uma store procedure
+
+-> TSQLConnection (DB Express)
+	-> Conexão direta no banco de dados
+	-> Uso de driver já contido no componente para conexão com banco diferentes
+	-> Sql Table
+	-> SqlQuerry
+	-> SqlStorFunc
+
+IBDataset (Desempenha os papéis dos 4 componentes)
+
+ADODataSet
+
+SQlDataSet

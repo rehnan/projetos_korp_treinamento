@@ -1,0 +1,38 @@
+unit FrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uSuperClasse, uSubClasse;
+
+type
+    TForm1 = class(TForm)
+    btnShowMessage: TButton;
+    procedure btnShowMessageClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    subClasse : TSubclasse;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnShowMessageClick(Sender: TObject);
+begin
+  subClasse := TSubClasse.Create;
+  try
+    subClasse.sayHello;
+  except on E : EAbstractError do
+         ShowMessage('O método: sayHello não foi implementado!');
+  end;
+
+end;
+
+end.

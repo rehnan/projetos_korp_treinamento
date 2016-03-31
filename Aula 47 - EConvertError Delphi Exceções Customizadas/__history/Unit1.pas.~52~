@@ -1,0 +1,63 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, UCalculadora;
+
+type
+    TForm1 = class(TForm)
+    SpeedBtnSomar: TSpeedButton;
+    SpeedBtnSubtrair: TSpeedButton;
+    SpeedBtnDividir: TSpeedButton;
+    SpeedBtnMultiplicar: TSpeedButton;
+    EdtResult: TEdit;
+    EdtNumero2: TEdit;
+    EdtNumero1: TEdit;
+    LblNumero1: TLabel;
+    LblNumero2: TLabel;
+    LblResult: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure SpeedBtnSomarClick(Sender: TObject);
+    procedure SpeedBtnSubtrairClick(Sender: TObject);
+
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Calculadora : TCalculadora;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  ;
+end;
+
+procedure TForm1.SpeedBtnSomarClick(Sender: TObject);
+begin
+  Calculadora := TCalculadora.Create;
+  Calculadora.ExecutaOperacao(EdtNumero1.Text, EdtNumero2.Text, opSoma);
+  EdtResult.Text := FloatToStr(Calculadora.Result);
+end;
+
+procedure TForm1.SpeedBtnSubtrairClick(Sender: TObject);
+begin
+  Calculadora := TCalculadora.Create;
+  Calculadora.ExecutaOperacao(EdtNumero1.Text, EdtNumero2.Text, opSubtracao);
+  EdtResult.Text := FloatToStr(Calculadora.Result);
+end;
+
+end.
+
+
+
+

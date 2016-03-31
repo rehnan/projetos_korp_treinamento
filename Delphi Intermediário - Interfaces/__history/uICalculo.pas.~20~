@@ -1,0 +1,14 @@
+unit uICalculo;
+
+interface
+
+type
+  ICalcPotencia = interface(IInterface)
+    // para gerar o GUID abaixo, aperte SHIFT-CTRL+G
+    ['{AAAAC4DD-1925-4006-817E-9807CE6D3450}']
+    function calcular(const Base, Expoente : Integer) : Double;
+  end;
+
+implementation
+
+end.

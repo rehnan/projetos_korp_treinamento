@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/11/03 14:53:10.000.214,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/11/16 15:44:59.000.610,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/11/17 11:25:50.000.508,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/12/30 15:09:26.000.333,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/21 11:27:18.000.685,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 10:40:09.000.967,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 10:41:00.000.540,C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\FrmPrincipal.pas</Transaction>
+    <Transaction>2016/03/23 10:41:00.000.540,C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\FrmPrincipal.dfm</Transaction>
+    <Transaction>2016/03/23 10:41:08.000.643,C:\Users\dev02\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\Diretivas.dproj</Transaction>
+    <Transaction>2016/03/23 10:41:17.000.126,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 10:41:39.000.925,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\Unit1.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\uSuperClasse.pas</Transaction>
+    <Transaction>2016/03/23 10:43:22.000.225,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 10:43:31.000.621,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\Unit1.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - Diretivas Virtual e Abstract\uSubClasse.pas</Transaction>
+  </Transactions>
+</BorlandProject>

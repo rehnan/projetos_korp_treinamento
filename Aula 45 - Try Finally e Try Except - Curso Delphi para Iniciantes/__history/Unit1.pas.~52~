@@ -1,0 +1,105 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    BtnNaoTratarException: TButton;
+    BtnTratarException: TButton;
+    Button1: TButton;
+    Button2: TButton;
+    procedure BtnNaoTratarExceptionClick(Sender: TObject);
+    procedure BtnTratarExceptionClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.BtnNaoTratarExceptionClick(Sender: TObject);
+var
+  valor1, valor2 : Integer;
+  Result : Double;
+begin
+   valor1 := 10;
+   valor2 := 0;
+
+   Result := valor1 / valor2;
+   ShowMessage('Resultado: '+FloatToStr(Result));
+end;
+
+procedure TForm1.BtnTratarExceptionClick(Sender: TObject);
+var
+  valor1, valor2 : Integer;
+  Result : Double;
+begin
+  Screen.Cursor := crHourGlass;
+  try
+   valor1 := 10;
+   valor2 := 2;
+   Result := valor1 / valor2;
+   ShowMessage('Resultado: '+FloatToStr(Result));
+  except
+     ShowMessage('Não foi possível realizar o cálculo, pois não existe divisão por 0');
+     Screen.Cursor := crDefault;
+  end;
+  ShowMessage('O Bloco Except só vai executar se houver uma exceção, ');
+
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  valor1, valor2 : Integer;
+  Result : Double;
+begin
+  try
+   Screen.Cursor := crHourGlass;
+   valor1 := 10;
+   valor2 := 0;
+   Sleep(3000);
+   Result := valor1 / valor2;
+
+   ShowMessage('Resultado: '+FloatToStr(Result));
+  finally
+     Screen.Cursor := crDefault;
+     ShowMessage('Bloco Finally Executado! O recurso foi liberado. Porém a excessão não foi tratada');
+  end;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  valor1, valor2 : Integer;
+  Result : Double;
+begin
+   try
+      Screen.Cursor := crHourGlass;
+      Try
+         valor1 := 10;
+         valor2 := 0;
+         Sleep(3000);
+         Result := valor1 / valor2;
+
+         ShowMessage('Resultado: '+FloatToStr(Result));
+      except
+         ShowMessage('Não foi possível realizar o cálculo, pois não existe divisão por 0');
+      end;
+  finally
+     Screen.Cursor := crDefault;
+     ShowMessage('Bloco Finally Executado! O recurso foi liberado. E a excessão não foi tratada');
+  end;
+end;
+
+end.

@@ -1,0 +1,35 @@
+unit uVenda;
+
+interface
+
+uses Dialogs;
+
+type
+  TVenda = class
+    private
+      VendaIniciada: Boolean;
+    public
+      procedure IniciarVenda;
+      procedure FinalizarVenda;
+  end;
+
+implementation
+
+procedure TVenda.IniciarVenda;
+begin
+  if not VendaIniciada then
+  begin
+    VendaIniciada := True;
+    ShowMessage('Venda iniciada!');
+  end;
+end;
+
+procedure TVenda.FinalizarVenda;
+begin
+  if VendaIniciada then
+  begin
+
+  end;
+end;
+
+end.

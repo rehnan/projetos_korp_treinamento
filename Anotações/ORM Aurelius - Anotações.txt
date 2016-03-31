@@ -1,0 +1,108 @@
+o Aurelius possui recursos que permitem o mapeamento automático das classes do Delphi, 
+sendo o mesmo executado com a adição da Unit Aurelius.Mapping.Attributes
+
+[Entity] - Declarado antes da criação da classe para indicar uma entidade que por sua vez pode ser persistida;
+Ex:
+[Entity]	
+TCliente = class
+
+[Automapping] - Declarado antes da elaboração da classe para efetuar o mapeamento automático da classe através do Aurélius.
+Ex:
+[Entity]
+[Automapping]
+TCliente = class
+
+[Table('Nome Tabela')] - Também deve ser declarado antes da criação da classe e pode ser utilizado no mapeamento manual para 
+indicar que a classe está relacionada à determinada tabela do banco de dados para que a gravação dos objetos possa ser efetuada.
+Ex:
+[Table('Cliente')]
+TCliente = class
+private
+
+[Colum('Nome Coluna')] - Utilizada para mapeamento manual de uma coluna da tabela para uma propriedade da classe, 
+devendo ser definida antes da declaração da mesmo.
+Ex:
+private
+[Colum('Descricao')]
+FDescricao : String;
+
+[Id('Campo Id'), Opções] - Deve ser utilizado para definir o identificador da classe de forma manual, o campo de chave 
+primária no banco de dados. Em conjunto com a declaração do mesmo, devem ser definidas as opç~ies, tais auto-incremento.
+Ex:
+[Id('Fid', TidGenerator.IdentityOrSequence)]
+Fid: Integer;
+
+[Sequence('Nome Seq')] - Define um Generator ou Sequence que deve ser utilizado em conjunto com o campo Id para Incremento automático.
+Ex:
+[Sequence('Cliente_Seq')]
+[Id('Fid'
+
+[Association(Opções)] - Utilizado para indicar relacionamentos entre as entidades (outras classes), tais como muitos-para-um, 
+devendo ser empregada em conjunto com o atributo [JoinColumn].
+
+[JoinColumn('Nome Coluna'), Opções] - Utilizado para especificar qual coluna da tabela deve ser utilizada para chave estrangeira.
+Ex:
+[JoinColumn('Id', [])]
+FIdX : Integer;
+
+[Translent] - Utilizdo para declarar uma propriedade da classe que não deverá ser persistida, também deve ser antes da definição do campo.
+Ex:
+[Translent]
+FNãoMapear : String;
+
+
+
+
+1º Criar units com classes de entidades com suas diretivas de mapeamento
+2º Criar  unit de conexão
+
+ Definidas as Entidades, o próximo passo é criar uma nova Unit, que neste projeto foi denominada “UConexao.pas”, 
+com o intuito de definir uma classe que será responsável pelo gerenciamento da conexão com o banco de dados e prover a 
+base para que os objetos possam ser gravados, atualizados e carregados, que por sua vez recebeu a denominação de 
+TGerenciadorConexao. Esta classe será do tipo sealed (selada).
+  Este tipo sempre deve ser empregado quando determinada clas
+
+
+Lista primitiva tipo  Set of Char
+
+
+
+Sealed
+
+Modificador Sealed – O modificador sealed (também conhecido como selado) define que uma classe não pode ser 
+uma classe base, ou seja, não pode ter herdeiras. Uma classe sealed está pronta para uso e deve ser empregada no programa. 
+Devido especialmente às suas características, as classes sealed podem ser consideradas o oposto das classes abstratas.
+
+http://www.devmedia.com.br/conceitos-e-exemplos-virtual-override-e-modificador-sealed-estrutura-da-linguagem/18876Além das explicações mencionadas referentes às classes sealed, devemos considerar alguns outros, conforme podemos ver abaixo:
+
+
+Ponteiros: http://www.devmedia.com.br/ponteiros-clube-delphi-118/17178
+
+
+A função atribuída verifica para ver se uma referência não é nulo. Ele retorna True se não nulo, e False se nulo.
+ 
+A utilização de uma referência Nil vai resultar em uma excepção.
+ 
+As três versões do Assigned permitir que a função para trabalhar em ponteiros de dados, referências a objetos e referências método de classe.
+ 
+É melhor utilizar atribuído ao invés de Nil quando se refere a métodos de modo a distinguir a partir da verificação de um resultado nulo de um método.
+
+
+Verifica se há referência nula de uma variável.
+Assigned : Retorna true se o ponteiro da variável for diferente de nil; 
+	   Retorna false se o ponteiro da variável for igual a nil;
+	   lança exceção EAccessViolation caso a variável tenha recebido um FreeAndNil(variavel)
+
+
+Exit - sair de um procedimento ou função e continua executando ;
+Abort - Para um procedimento ou função e mais nada é executado. 
+Break: Força a saída de um lanço de repetição (Só pode ser utilizado dentro de laçoes de repetição
+
+Se vc estiver executando um procedimento que chame uma função que possui a condição exit. O sistema sai da função e continua executando o procimento. Se utilizar abort além de para a função...para tambem o procedimeto, ou seja mata o processo a partir da linha onde foi colocado.
+
+TPageControl.ActivePage := tabCadastro
+
+http://www.devmedia.com.br/websys.5/webreader.asp?cat=3&artigo=4711&revista=clubedelphi_142#a-4711
+
+SQLITE STUDIO
+  

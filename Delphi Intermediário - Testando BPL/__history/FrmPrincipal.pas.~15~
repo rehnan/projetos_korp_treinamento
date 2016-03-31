@@ -1,0 +1,44 @@
+unit FrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Unit1, FrmBPLPrincipal;
+
+type
+  TForm1 = class(TForm)
+    btnShowMessage: TButton;
+    btnOpenForm: TButton;
+    procedure btnShowMessageClick(Sender: TObject);
+    procedure btnOpenFormClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  Form2 : TForm2;
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnOpenFormClick(Sender: TObject);
+begin
+   try
+     Form2 := TForm2.Create(Self);
+     Form2.ShowModal;
+   finally
+     FreeAndNil(Form2)
+   end;
+end;
+
+procedure TForm1.btnShowMessageClick(Sender: TObject);
+begin
+  ExibirMensagem('Mensagem exibida a partir da BPL');
+end;
+
+end.
+

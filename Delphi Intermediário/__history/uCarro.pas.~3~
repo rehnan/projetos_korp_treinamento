@@ -1,0 +1,14 @@
+unit uCarro;
+
+interface
+
+type
+  TCarro = class
+    descricao : String;
+    capacidade : Integer;
+    quilometragem : Integer;
+  end;
+
+implementation
+
+end.

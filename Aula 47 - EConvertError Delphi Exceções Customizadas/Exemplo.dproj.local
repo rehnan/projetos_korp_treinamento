@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/03/18 13:25:55.000.018,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/18 15:18:34.000.128,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/18 15:19:54.000.781,C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 47 - EConvertError Delphi Exceções Customizadas\Unit1.pas</Transaction>
+    <Transaction>2016/03/18 15:19:54.000.781,C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 47 - EConvertError Delphi Exceções Customizadas\Unit1.dfm</Transaction>
+    <Transaction>2016/03/18 15:23:03.000.455,C:\Users\dev02\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 47 - EConvertError Delphi Exceções Customizadas\Exemplo.dproj</Transaction>
+    <Transaction>2016/03/18 15:37:55.000.776,=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 47 - EConvertError Delphi Exceções Customizadas\Unit2.pas</Transaction>
+    <Transaction>2016/03/18 15:38:08.000.313,C:\Users\dev02\Documents\RAD Studio\Projects\Aula 47 - EConvertError Delphi Exceções Customizadas\Unit2.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 47 - EConvertError Delphi Exceções Customizadas\UCalculadora.pas</Transaction>
+  </Transactions>
+</BorlandProject>

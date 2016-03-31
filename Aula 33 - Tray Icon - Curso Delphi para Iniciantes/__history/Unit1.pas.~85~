@@ -1,0 +1,101 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.AppEvnts, Vcl.Menus, Vcl.ExtCtrls,
+  Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    AppEvents: TApplicationEvents;
+    PopupMenuActions: TPopupMenu;
+    Error1: TMenuItem;
+    Info1: TMenuItem;
+    Success1: TMenuItem;
+    Warnning1: TMenuItem;
+    TrayIconApp: TTrayIcon;
+    Label1: TLabel;
+    procedure AppEventsMinimize(Sender: TObject);
+    procedure AppEventsRestore(Sender: TObject);
+    procedure Error1Click(Sender: TObject);
+    procedure Info1Click(Sender: TObject);
+    procedure Success1Click(Sender: TObject);
+    procedure Warnning1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+(* Event Application minimized *)
+procedure TForm1.AppEventsMinimize(Sender: TObject);
+begin
+  TrayIconApp.BalloonTitle := 'Running in Backround'; (* Setando título do balão *)
+  TrayIconApp.BalloonFlags := bfInfo; (* Setando constante de icon Error *)
+  TrayIconApp.BalloonHint := 'The Application was minimized!'; (* Texto de Notificação breve *)
+  TrayIconApp.Hint := 'The Application was minimized!';
+  TrayIconApp.AnimateInterval := 10000; (* Setando tempo de exibição do balão *)
+  TrayIconApp.ShowBalloonHint;  (* Exibindo balão *)
+end;
+
+(* Event Application Maximized *)
+procedure TForm1.AppEventsRestore(Sender: TObject);
+begin
+   TrayIconApp.BalloonTitle := 'Application Restored!'; (* Setando título do balão *)
+  TrayIconApp.BalloonFlags := bfWarning; (* Setando constante de icon Error *)
+  TrayIconApp.BalloonHint := 'The Application was restored!'; (* Texto de Notificação breve *)
+  TrayIconApp.Hint := 'The Application was restored!';
+  TrayIconApp.AnimateInterval := 10000; (* Setando tempo de exibição do balão *)
+  TrayIconApp.ShowBalloonHint;  (* Exibindo balão *)
+end;
+
+procedure TForm1.Error1Click(Sender: TObject);
+begin
+  TrayIconApp.BalloonTitle := 'Título Error!'; (* Setando título do balão *)
+  TrayIconApp.BalloonFlags := bfError; (* Setando constante de icon Error *)
+  TrayIconApp.BalloonHint := 'Notificação Breve'; (* Texto de Notificação breve *)
+  TrayIconApp.Hint := 'Descrição mais detalhada da notificação do status da aplicação....';
+  TrayIconApp.AnimateInterval := 10000; (* Setando tempo de exibição do balão *)
+  TrayIconApp.ShowBalloonHint;  (* Exibindo balão *)
+end;
+
+procedure TForm1.Info1Click(Sender: TObject);
+begin
+  TrayIconApp.BalloonTitle := 'Título Info!'; (* Setando título do balão *)
+  TrayIconApp.BalloonFlags := bfInfo; (* Setando constante de icon Info *)
+  TrayIconApp.BalloonHint := 'Notificação Breve'; (* Texto de Notificação breve *)
+  TrayIconApp.Hint := 'Descrição mais detalhada da notificação do status da aplicação....';
+  TrayIconApp.AnimateInterval := 10000; (* Setando tempo de exibição do balão *)
+  TrayIconApp.ShowBalloonHint;  (* Exibindo balão *)
+end;
+
+procedure TForm1.Success1Click(Sender: TObject);
+begin
+  TrayIconApp.BalloonTitle := 'Título Nothing!'; (* Setando título do balão *)
+  TrayIconApp.BalloonFlags := bfNone; (* Setando constante de icon default *)
+  TrayIconApp.BalloonHint := 'Notificação Breve'; (* Texto de Notificação breve *)
+  TrayIconApp.Hint := 'Descrição mais detalhada da notificação do status da aplicação....';
+  TrayIconApp.AnimateInterval := 10000; (* Setando tempo de exibição do balão *)
+  TrayIconApp.ShowBalloonHint;  (* Exibindo balão *)
+end;
+
+procedure TForm1.Warnning1Click(Sender: TObject);
+begin
+  TrayIconApp.BalloonTitle := 'Título Warnning!'; (* Setando título do balão *)
+  TrayIconApp.BalloonFlags := bfWarning; (* Setando constante de icon warnning *)
+  TrayIconApp.BalloonHint := 'Notificação Breve'; (* Texto de Notificação breve *)
+  TrayIconApp.Hint := 'Descrição mais detalhada da notificação do status da aplicação....';
+  TrayIconApp.AnimateInterval := 10000; (* Setando tempo de exibição do balão *)
+  TrayIconApp.ShowBalloonHint;  (* Exibindo balão *)
+end;
+
+end.

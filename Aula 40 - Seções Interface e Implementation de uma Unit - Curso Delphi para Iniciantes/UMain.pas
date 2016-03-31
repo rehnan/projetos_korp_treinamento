@@ -1,0 +1,80 @@
+unit UMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UCliente, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.Menus;
+
+type
+    TForm1 = class(TForm)
+    BtnCreateInstance: TButton;
+    EditNome: TEdit;
+    EditIdade: TEdit;
+    EditProfissao: TEdit;
+    StringGridClientes: TStringGrid;
+    LabelNome: TLabel;
+    Label1: TLabel;
+    LabelProfissao: TLabel;
+    PopupMenuDetalhesObjeto: TPopupMenu;
+    ExbieDetalhes: TMenuItem;
+    procedure BtnCreateInstanceClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+
+
+var
+  Form1: TForm1;
+  Cliente : TCliente;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.BtnCreateInstanceClick(Sender: TObject);
+var
+  indexGrid : Integer;
+begin
+
+  //Criando Instância
+  Cliente := TCliente.Create;
+  Cliente.setId(StringGridClientes.RowCount);
+  Cliente.setNome(EditNome.Text);
+  Cliente.setIdade(EditIdade.Text);
+  Cliente.setProfissao(EditProfissao.Text);
+
+  //Incrementando index grid
+  indexGrid := StringGridClientes.RowCount + 1;
+
+   //StringGridClientes.Objects[L,C] = Retorna o objeto da respectiva linha e coluna
+   //StringGridClientes.Objects[Coluna, Linha]
+
+   StringGridClientes.Objects[0,StringGridClientes.RowCount] := Cliente;
+   StringGridClientes.Cells[0,StringGridClientes.RowCount] := IntToStr(Cliente.getId);
+   StringGridClientes.Cells[1,StringGridClientes.RowCount] := Cliente.getNome;
+   StringGridClientes.Cells[2,StringGridClientes.RowCount] := IntToStr(Cliente.getIdade);
+   StringGridClientes.Cells[3,StringGridClientes.RowCount] := Cliente.getProfissao;
+
+   StringGridClientes.RowCount := indexGrid;
+
+
+
+
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  StringGridClientes.Cells[0, 0] := 'ID';
+  StringGridClientes.Cells[1, 0] := 'Nome';
+  StringGridClientes.Cells[2, 0] := 'Idade';
+  StringGridClientes.Cells[3, 0] := 'Profissão ';
+end;
+
+end.

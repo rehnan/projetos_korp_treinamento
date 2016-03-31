@@ -1,0 +1,36 @@
+  unit uCarro;
+
+interface
+
+uses
+  uMeioTransporte, Vcl.Dialogs;
+
+type
+  TCarro = class(TMeioTransporte)
+    private
+      Fquilometragem : Integer;
+      //Como o método fora assinado com override, o método mover da classe pai (TMeioTransporte) será sobrescrita
+    published
+       property quilometragem Integer read Fquilometragem wirte Fquilometragem;
+
+    public
+      procedure Mover; override;
+      procedure Ligar; override;
+  end;
+
+implementation
+
+{ TCarro }
+
+procedure TCarro.Ligar;
+begin
+  ShowMessage('Ligando Carro...');
+end;
+
+procedure TCarro.Mover;
+begin
+  inherited;
+  ShowMessage(Self.descricao+' está rodando!');;
+end;
+
+end.

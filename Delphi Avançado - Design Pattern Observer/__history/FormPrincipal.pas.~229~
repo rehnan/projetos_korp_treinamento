@@ -1,0 +1,101 @@
+unit FormPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uVenda, uBalanco, uBlog, uAssinantes, uObserver,
+  Vcl.Menus, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    edtNomeAssnt: TEdit;
+    edtEmailAssnt: TEdit;
+    btnRegistrarAssnt: TButton;
+    btnPublicarPost: TButton;
+    edtPost: TEdit;
+    lstAssinantes: TListBox;
+    PopupMenuAcoes: TPopupMenu;
+    RemoverAssinante1: TMenuItem;
+    VisualizarAssinante1: TMenuItem;
+    mmoLog: TMemo;
+    lblLog: TLabel;
+    procedure btnRegistrarAssntClick(Sender: TObject);
+    procedure btnPublicarPostClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure RemoverAssinante1Click(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+
+  private
+    { Private declarations }
+     procedure RegistraLog(log : String);
+  public
+    { Public declarations }
+     blog : TBlog;
+     assinante : TAssinante;
+     procedure updateListAssinates;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnPublicarPostClick(Sender: TObject);
+begin
+  blog.newPost := edtPost.Text;
+  blog.notificarObservadores;
+  RegistraLog('[Novo Post Publicado!]');
+  updateListAssinates;
+end;
+
+procedure TForm1.btnRegistrarAssntClick(Sender: TObject);
+begin
+  blog.registrarObservador(TAssinante.Create(edtNomeAssnt.Text, edtEmailAssnt.Text));
+  RegistraLog('[Novo Observador Registrado]');
+  updateListAssinates;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  blog := TBlog.Create;
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  FreeAndNil(blog);
+  blog.Free;
+  blog := nil
+end;
+
+procedure TForm1.RegistraLog(log: String);
+begin
+  mmoLog.Lines.Add('['+DateToStr(Now)+' '+TimeToStr(Now)+'] '+log);
+  mmoLog.Update;
+end;
+
+procedure TForm1.RemoverAssinante1Click(Sender: TObject);
+var
+  obsEncontrado : IObservador;
+begin
+   ShowMessage(IntToStr(lstAssinantes.ItemIndex)); { Recupera Index do observador selecionado }
+   obsEncontrado := blog.encontraObservador(lstAssinantes.ItemIndex); { Procura por observador }
+   blog.removerObservador(obsEncontrado); { Remove Observador encontrado }
+   lstAssinantes.DeleteSelected; { Deleta do listBox visual }
+   RegistraLog('[Observador'+ TAssinante(obsEncontrado).nome  +'Removido!]');
+end;
+
+procedure TForm1.updateListAssinates;
+var
+  assinante: IObservador;
+begin
+  lstAssinantes.Clear;
+  for assinante in blog.listaAssinatens do
+    begin
+       lstAssinantes.Items.Add(TAssinante(assinante).nome+' - '+TAssinante(assinante).email+' - '+TAssinante(assinante).post);
+    end;
+end;
+
+end.

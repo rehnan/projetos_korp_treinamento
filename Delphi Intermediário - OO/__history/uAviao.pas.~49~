@@ -1,0 +1,30 @@
+unit uAviao;
+
+interface
+
+uses
+   uMeioTransporte, Vcl.Dialogs;
+
+type
+  TAviao = class(TMeioTransporte)
+    horasVoo : Integer;
+    procedure Ligar; override;
+    procedure Mover; override;
+  end;
+
+implementation
+
+{ TAviao }
+
+procedure TAviao.Ligar;
+begin
+   ShowMessage('Ligando Avião...');
+end;
+
+procedure TAviao.Mover;
+begin
+  inherited; //Chamária o método ligar da classe pai
+  ShowMessage(Self.descricao+' está voando!');;
+end;
+
+end.

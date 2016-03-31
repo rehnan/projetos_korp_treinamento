@@ -1,0 +1,138 @@
+unit uFrmMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uCarro, uAviao, uMeioTransporte;
+
+type
+  TForm1 = class(TForm)
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    EdtDescCarro: TEdit;
+    EdtCapCarro: TEdit;
+    EdtQuilometragem: TEdit;
+    BtnCriarCarro: TButton;
+    BtnLiberarCarro: TButton;
+    Button1: TButton;
+    GroupBox2: TGroupBox;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    EdtDescAviao: TEdit;
+    EdtCapAviao: TEdit;
+    EdtHorasVoo: TEdit;
+    btnCriarAviao: TButton;
+    btnLiberarAviao: TButton;
+    btnMoverAviao: TButton;
+    btnMoverCarroPolimorfismo: TButton;
+    btnMoverAviaoPolimorfismo: TButton;
+    procedure BtnCriarCarroClick(Sender: TObject);
+    procedure btnCriarAviaoClick(Sender: TObject);
+    procedure BtnLiberarCarroClick(Sender: TObject);
+    procedure btnLiberarAviaoClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure btnMoverAviaoClick(Sender: TObject);
+    procedure btnMoverCarroPolimorfismoClick(Sender: TObject);
+    procedure btnMoverAviaoPolimorfismoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    (* Carro : TCarro;
+     Aviao : TAviao; *)
+     Carro, Aviao : TMeioTransporte;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnCriarAviaoClick(Sender: TObject);
+begin
+  { Aviao := TAviao.Create; }
+
+  Aviao := TMeioTransporte.Create;
+
+  if EdtDescAviao.Text<>'' then
+
+     Aviao.descricao :=EdtDescAviao.Text;
+
+  if EdtCapAviao.Text<>'' then
+
+     Aviao.Capacidade:=StrToIntDef(EdtCapAviao.Text,0);
+
+  if EdtHorasVoo.Text<>'' then
+
+     { Aviao.HorasVoo:=StrToIntDef(EdtHorasVoo.Text,0); }
+     // Fazendo cast pra conversão da classe
+     TAviao(Aviao).HorasVoo:=StrToIntDef(EdtHorasVoo.Text,0);
+
+end;
+
+procedure TForm1.BtnCriarCarroClick(Sender: TObject);
+begin
+  { Carro := TCarro.Create; }
+   Carro := TMeioTransporte.Create;
+
+  if EdtDescCarro.Text<>'' then
+
+     Carro.Descricao:=EdtDescCarro.Text;
+
+  if EdtCapCarro.Text<>'' then
+
+     Carro.Capacidade:=StrToIntDef(EdtCapCarro.Text,0);
+
+  if EdtQuilometragem.Text<>'' then
+     // Fazendo cast pra conversão da classe
+     { Carro.Quilometragem:=StrToIntDef(EdtQuilometragem.Text,0); }
+     TCarro(Carro).Quilometragem:=StrToIntDef(EdtQuilometragem.Text,0);
+end;
+
+procedure TForm1.btnLiberarAviaoClick(Sender: TObject);
+begin
+  Aviao.Free; // ou FreeAndNil(Carro)
+end;
+
+procedure TForm1.BtnLiberarCarroClick(Sender: TObject);
+begin
+   Carro.Free; // ou FreeAndNil(Carro)
+end;
+
+procedure TForm1.btnMoverAviaoClick(Sender: TObject);
+begin
+  //Neste Caso será chamado o método Voar da Classe TAviao
+  //TAviao(Aviao).Mover;
+
+  //Neste Caso será chamado o método Voar da Classe TMeioTransporte
+  Aviao.Mover;
+end;
+
+procedure TForm1.btnMoverAviaoPolimorfismoClick(Sender: TObject);
+begin
+  Aviao.Mover;
+end;
+
+procedure TForm1.btnMoverCarroPolimorfismoClick(Sender: TObject);
+begin
+  Carro.Mover;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  //Neste Caso será chamado o método Voar da Classe TCarro
+  //TCarro(Carro).Mover;
+
+  //Neste Caso será chamado o método Voar da Classe TMeioTransporte
+  Carro.Mover;
+end;
+
+
+
+end.

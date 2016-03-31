@@ -1,0 +1,13 @@
+unit uBalanco;
+
+interface
+
+type
+  TBalanco = class
+    private
+      BalancoIniciado: Boolean;
+  end;
+
+implementation
+
+end.

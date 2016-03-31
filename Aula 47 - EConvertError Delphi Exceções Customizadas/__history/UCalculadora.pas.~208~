@@ -1,0 +1,90 @@
+unit UCalculadora;
+
+interface
+
+uses
+System.SysUtils;
+
+type
+  ESomaError = Exception;
+  ESubtracaoError = Exception;
+  EDivisaoError = Exception;
+  EMultiplicacaoError = Exception;
+  TOperacao = (opSoma, opSubtracao, opMultiplicacao, opDivisao);
+  
+  TCalculadora = class
+     private { Só a própria classe tem acesso direto }
+         FValor1 : Double;
+         FValor2 : Double;
+         FResult : Double;
+         Fteste : String;
+     protected { Só as classes declaradas nesta mesma unit tem acesso }
+         procedure Somar(v1, v2 : String);
+         procedure Subtrair(v1, v2 : String);
+         procedure Multiplicar(v1, v2 : String);
+         procedure Dividir(v1, v2 : String);
+     public { O elemento que instanciar podem efetuar acesso direto a função/procedure/atributo }
+         property Valor1 : Double read FValor1 write FValor1;
+         property Valor2 : Double read FValor2 write FValor2;
+         property Result : Double read FResult write FResult;
+         procedure ExecutaOperacao(v1, v2 : String; operacao : TOperacao);
+  end;
+
+implementation
+
+procedure TCalculadora.Somar(v1, v2 : String);
+begin
+
+  try
+    Self.Valor1 :=  StrToFloat(v1);
+    Self.Valor2 :=  StrToFloat(v2);
+    Self.Result :=  Self.Valor1 + Self.Valor2;
+  except on E : Exception do
+    raise ESomaError.Create('Ocorreu um erro ao tentar realizar a operação de soma!');
+  end;
+end;
+
+procedure TCalculadora.Subtrair(v1, v2 : String);
+begin
+  try
+    Self.Valor1 :=  StrToFloat(v1);
+    Self.Valor2 :=  StrToFloat(v2);
+    Self.Result :=  Self.Valor1 - Self.Valor2;
+  except on E : Exception do
+    raise ESubtracaoError.Create('Ocorreu um erro ao tentar realizar a operação de subtração!');
+  end;
+end;
+
+procedure TCalculadora.Multiplicar(v1, v2 : String);
+begin
+  try
+    Self.Valor1 :=  StrToFloat(v1);
+    Self.Valor2 :=  StrToFloat(v2);
+    Self.Result :=  Self.Valor1 * Self.Valor2;
+  except on E : Exception do
+    raise EMultiplicacaoError.Create('Ocorreu um erro ao tentar realizar a operação de multiplição!');
+  end;
+end;
+
+procedure TCalculadora.Dividir(v1, v2 : String);
+begin
+  try
+    Self.Valor1 := StrToFloat(v1);
+    Self.Valor2 := StrToFloat(v2);
+    Self.Result := Self.Valor1 / Self.Valor2;
+  except on E : Exception do
+    raise EDivisaoError.Create('Ocorreu um erro ao tentar realizar a operação de divisão!');
+  end;
+end;
+
+procedure TCalculadora.ExecutaOperacao(v1, v2 : String; operacao : TOperacao);
+begin
+  case operacao of
+      opSoma : Somar(v1, v2);
+      opSubtracao : Subtrair(v1, v2);
+      opMultiplicacao : Multiplicar(v1, v2);
+      opDivisao : Dividir(v1, v2);
+  end;
+end;
+
+end.

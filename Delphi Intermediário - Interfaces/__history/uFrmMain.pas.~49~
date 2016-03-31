@@ -1,0 +1,42 @@
+unit uFrmMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, uComputador;
+
+type
+  TFrmMain = class(TForm)
+    edtBase: TEdit;
+    RGOpcaoCalculo: TRadioGroup;
+    rbTCalculadora: TRadioButton;
+    rbTComputador: TRadioButton;
+    btnBtnCalcular: TButton;
+    edtExpoente: TEdit;
+    LblBase: TLabel;
+    LblExpoente: TLabel;
+    lblResultCalculo: TLabel;
+    lblLblPotencia: TLabel;
+    procedure btnBtnCalcularClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmMain: TFrmMain;
+
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrmMain.btnBtnCalcularClick(Sender: TObject);
+begin
+  Calculadora := TComputador.Create(edtBase.Text, edtExpoente.Text);
+  lblResultCalculo.Caption := Calculadora.calcularPotencia();
+end;
+
+end.

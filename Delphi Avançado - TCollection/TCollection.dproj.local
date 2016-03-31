@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/11/03 14:53:10.000.214,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/11/16 15:44:59.000.610,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/11/17 11:25:50.000.508,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/12/30 15:09:26.000.333,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/21 11:27:18.000.685,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 08:52:28.303,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 08:53:33.813,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\FrmMain.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 08:53:33.813,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\FrmMain.dfm=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2016/03/22 08:53:42.033,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\TCollection.dproj=C:\Users\dev02\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2016/03/22 08:54:11.650,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 08:54:36.467,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\uProduto.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 09:50:45.136,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 09:51:04.437,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\uSetProduto.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 11:21:01.879,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 11:21:17.392,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\uObservador.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 11:25:26.887,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 11:25:37.924,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\uSujeito.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 11:29:19.674,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit2.pas</Transaction>
+    <Transaction>2016/03/22 11:29:55.604,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\FrmObservador.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit2.pas</Transaction>
+    <Transaction>2016/03/22 11:29:55.604,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\FrmObservador.dfm=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit2.dfm</Transaction>
+    <Transaction>2016/03/22 11:31:21.327,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+    <Transaction>2016/03/22 11:32:08.985,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\uListaProdutos.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - TCollection\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,34 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 201
+  ClientWidth = 447
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 24
+    Top = 47
+    Width = 105
+    Height = 82
+    Caption = 
+      'V1 := '#39'1'#39';'#13#10'V2 := '#39'1'#39';'#13#10'V3 := 2;'#13#10'V1 := V1 + V2 + V3;'#13#10'ShowMessa' +
+      'ge(V1);'
+  end
+  object Button1: TButton
+    Left = 144
+    Top = 104
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+end

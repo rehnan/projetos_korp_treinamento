@@ -1,0 +1,15 @@
+unit uBalanco;
+
+interface
+
+type
+  TBalanco = class
+    private
+      BalancoIniciado: Boolean;
+    public
+      procedure IniciarBalanco
+  end;
+
+implementation
+
+end.

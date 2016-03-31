@@ -1,0 +1,49 @@
+ propriedade OwnsObjects como falsa. Se o valor desta propriedade é True, 
+todos os objetos gerenciados são destruídos com o gerenciador no momento em que 
+o mesmo for destruído, caso contrário, os objetos continuam na memória
+
+Componentes: 
+	IDBConnection - Interface utilizada para represntar a conexão com um banco de dados através do Aureliu, oferecendo a base para as operações
+	TDatabaseManager - Classe responsável po criar as tabelas e campos no banco com base nas classes a atributos no delphi
+	TObjectManager - Classe (ponte de persistência entre banco e entidades) responsável por fazer gravação, atualização, exclusao e carregamento das informações;
+
+IDBConnection: Quando a conexão é feita com  uso deste componente, é necessário um Adapter para definir o tipo de conexão
+TIBExpressConnectionAdapter.
+
+Principais Adapters para o componente IDBConnection:
+
+Depois de definir o Adapter empregado para a conexão é definifo qual é o SQL Dialect que será utilizado. 
+O SQL Dialect é uma derivação da linguagem SQL. Que deve estar de acordo com o banco de dados que é aplicado
+Units para o suporte ao SQL Dialect:
+Aurelius.sql.Firebird
+Aurelius.sql.Interbase
+Aurelius.sql.PostgreSQL
+Aurelius.sql.Oracle
+Aurelius.sql.MSSQL
+
+Notação: [Entity] - Indica uma entidade que por sua vez pode ser persistida
+Notação: [Automapping] - Indica a efetuação do mapeamento automático da classe par ao banco
+	Obs: User sempre: FId nos atributos e Prefixo T antes da classe!!!!!
+
+
+1º Defnição das Entidades
+
+2º Criar Unit (UConexão.pas) responsável pelo Gerenciamento da Conexão com o Banco de Dados
+	Classe: TGerenciadorConexao
+	tipo: sealed (Não pode ser instânciada) para não ser herdada.
+	Implementa o padrão singleton; (Retornando uma única instância)
+	- Para efetuar a conexão utiliza o componente (Interface): IDBConnection (Unit Aurelius.Drivers.Interfaces )
+	- É criada uma variável de classe (FInstancia) para permitir o acesso a instância atual da classe
+3º Adição das Units Entidades e Conexão no form principal
+   -> Entidades TFornecedores e TProdutos
+   -> Declaração de dois TObjectManagers, um para Gereniar os fornecedores e outro para os Produtos
+
+4º - Inicialização dos TObjectesManagers da entidades no OnCreate do Formulário; 
+   ->  gerenciadorFornecedores := TObjectManager.Create(GetConexaoAtual);
+   ->  gerenciadorProdutos:= TObjectManager.Create(GetConexaoAtual);
+5º - Liberação de memória dos TObjectesManagers  no OnDestroy do formulário
+
+TLinq pertencente ao Framework (Aurelius.Criteria.Linq), possui diversos comandos para efetuar comparações de forma semelhante as Expressões SQL	
+  
+OwnsObjects : Se o valor desta propriedade é True, todos os objetos gerenciados são destruídos com o 
+gerenciador no momento em que o mesmo for destruído, caso contrário, os objetos continuam na memória. Por isso é definida como falsa

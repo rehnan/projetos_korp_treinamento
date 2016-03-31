@@ -1,0 +1,26 @@
+unit uTTransporteFactory;
+
+interface
+
+uses uITransporte;
+
+type
+  TTransporteFactory = class
+    public
+      class function Factory(Offline: Boolean; Host: string; Porta: Integer;
+         Ssl: Boolean): ITransporte; static;
+  end;
+
+implementation
+uses uTTransporteArquivoTexto, uTTransporteViaSmtp;
+
+class function TTransporteFactory.Factory(offline: Boolean; host: string; porta: Integer; ssl: Boolean): ITransporte;
+begin
+  if offline then
+    Result := TTransporteArquivoTexto.Create('C:\Emails.txt')
+  else
+    Result := TTransporteViaSmtp.Create(host, porta, '','', true);
+end;
+
+end.
+

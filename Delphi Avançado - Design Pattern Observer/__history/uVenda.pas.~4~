@@ -1,0 +1,14 @@
+unit uVenda;
+
+interface
+
+uses Dialogs;
+
+type
+  TVenda = class
+    VendaIniciada: Boolean;
+  end;
+
+implementation
+
+end.

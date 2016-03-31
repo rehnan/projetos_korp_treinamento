@@ -1,0 +1,41 @@
+#####################  REVISAR!!
+Criando Componentes
+http://www.devmedia.com.br/mini-curso-criando-componentes/1107
+
+BPLs
+http://www.devmedia.com.br/bpls-no-delphi-revista-clube-delphi-magazine-142/25022
+
+
+Trabalhar com pacotes, deixando a aplicação mais desacoplada
+
+--------------------------------------------------
+##################### O QUE JÁ FOI VISTO
+O que já foi estudado:
+TCollection 
+INterfaces
+Padrão Observer
+
+##################### O QUE FALT ESTUDAR
+
+
+
+- ORM
+- TESTE UNITÁRIO
+
+
+
+
+
+
+Dúvidas: 
+	O que é melhor definir no parâmetro de um método: const variável : tipo ou variável : tipo
+
+Diretiva: reintroduce
+
+
+Reintroduce 	: Redefine a função supressora (Da super classe)
+Overload 	: Permite mesmo nome para 2 ou mais funções (Sobrecarga)
+Virtual 	: Podem ser redefinidos em uma classe filha 
+Override 	: Redefine um método classe pai
+Abstract 	: Forças as classe filhas a implementar
+								

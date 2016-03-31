@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/11/11 16:33:23.000.273,=rtl.dcp</Transaction>
+    <Transaction>2016/03/28 15:08:58.000.695,=rtl.dcp</Transaction>
+    <Transaction>2016/03/28 15:30:32.000.796,=rtl.dcp</Transaction>
+    <Transaction>2016/03/28 15:31:50.000.924,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/28 15:35:16.000.000,C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - BPL\Unit1.pas</Transaction>
+    <Transaction>2016/03/28 15:35:20.000.318,C:\Users\dev02\Documents\RAD Studio\Projects\Package1.dproj=C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - BPL\MinhaBPLXE2.dproj</Transaction>
+    <Transaction>2016/03/28 15:36:21.000.733,=vcl.dcp</Transaction>
+    <Transaction>2016/03/30 10:05:19.000.643,=C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - BPL\Unit2.pas</Transaction>
+    <Transaction>2016/03/30 10:08:59.000.174,C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - BPL\Unit2.pas=C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - BPL\FrmBPLPrincipal.pas</Transaction>
+    <Transaction>2016/03/30 10:08:59.000.174,C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - BPL\Unit2.dfm=C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - BPL\FrmBPLPrincipal.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

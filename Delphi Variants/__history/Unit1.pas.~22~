@@ -1,0 +1,61 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Label1: TLabel;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+(*
+
+Tipos Variant podem suportar todos os tipos de dados simples como Inteiros,
+Ponto Flutuantes, Booleanos, Strings, Data e Hora, Moeda e Objetos OLE Automation.
+Variant´s não podem fazer referência a Objetos do Object Pascal nem a Ponteiros. Variant´s
+também podem fazer referência a um Array Não-Homogêneo cujos elementos podem fazer referência
+a qualquer um dos dados citados acima, inclusive a Arrays de Variant´s.
+
+Os valores VarEmpty e VarNull tem diferenças que devem ser entendidas pelo leitor
+deste. VarEmpty é o valor inicial de um Tipo Variant que quer dizer que a variável
+não tem valor algum. VarNull é um valor zero, nulo. Se você deseja atribuir estes
+valores a VType, use Unassigned para VarEmpty e Null para VarNull, lembrando que o
+uso incorreto e sem consciência dos mesmos provocará um erro. Voltando ao exemplo de
+como o Delphi gerencia as variáveis permanentemente, as variáveis Variant são
+inicializadas em Unassigned.
+
+*)
+
+procedure TForm1.Button1Click(Sender: TObject);
+Var
+ V1, V2, V3: Variant;
+begin
+   V1 := '1';
+   V2 := '1';
+   V3 := 2;
+   V1 := V1 + V2 + V3;
+   ShowMessage(V1);
+end;
+procedure TForm1.Button2Click(Sender: TObject);
+
+end;
+
+end.

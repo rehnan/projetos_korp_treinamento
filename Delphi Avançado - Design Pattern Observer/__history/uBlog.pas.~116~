@@ -1,0 +1,82 @@
+unit uBlog;
+
+interface
+
+uses Generics.Collections, uObserver, Vcl.Dialogs, System.SysUtils;
+
+type
+  TBlog = class(TInterfacedObject, IObservavel)
+    private
+      novoPost : Boolean;
+      post : String;
+      assinantes: TList<IObservador>;
+    procedure SetPost(const Value: String);
+
+    public
+      property newPost : String read post write SetPost;
+      property listaAssinatens : TList<IObservador> read assinantes;
+      procedure registrarObservador(observador: IObservador);
+      procedure removerObservador(observador: IObservador);
+      procedure notificarObservadores();
+      function encontraObservador(const index : Integer) : IObservador;
+      constructor Create;
+  end;
+
+implementation
+
+uses System.Classes;
+
+procedure TBlog.registrarObservador(observador: IObservador);
+begin
+  if not assinantes.Contains(observador) then
+  begin
+     try
+      assinantes.Add(observador);
+      ShowMessage('Adicionando na lista '+IntToStr(assinantes.Count));
+     except on E: Exception do
+      ShowMessage('Deu ruim!');
+     end;
+  end;
+
+end;
+
+procedure TBlog.removerObservador(observador: IObservador);
+begin
+  if assinantes.Contains(observador) then
+  begin
+    assinantes.Remove(observador);
+    assinantes.TrimExcess;
+  end;
+end;
+
+procedure TBlog.SetPost(const Value: String);
+begin
+  post := Value;
+end;
+
+procedure TBlog.notificarObservadores;
+var
+  assinante: IObservador;
+begin
+  for assinante in assinantes do
+      assinante.notificacao(post);
+end;
+
+function TBlog.encontraObservador(const index : Integer) : IObservador;
+begin
+  try
+    Result := assinantes.Items[index]
+  Except on E : Exception do
+        raise E.Create('Observador não encontrado na lista!');
+  end;
+end;
+
+constructor TBlog.Create;
+begin
+  inherited Create;
+  assinantes := TList<IObservador>.Create;
+end;
+
+end.
+
+

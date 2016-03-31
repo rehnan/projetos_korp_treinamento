@@ -1,0 +1,194 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 358
+  ClientWidth = 640
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelMenuEsquerdo: TPanel
+    Left = 0
+    Top = 56
+    Width = 185
+    Height = 302
+    Align = alLeft
+    BevelOuter = bvNone
+    DockSite = True
+    PopupMenu = PopupMenu1
+    TabOrder = 0
+    ExplicitTop = 96
+    ExplicitHeight = 265
+    object PanelPropriedades: TPanel
+      Left = 0
+      Top = 40
+      Width = 185
+      Height = 137
+      Caption = 'Propriedades'
+      DragKind = dkDock
+      DragMode = dmAutomatic
+      TabOrder = 0
+    end
+  end
+  object PanelMenuDireita: TPanel
+    Left = 455
+    Top = 56
+    Width = 185
+    Height = 302
+    Align = alRight
+    BevelOuter = bvNone
+    DockSite = True
+    TabOrder = 1
+    ExplicitTop = 62
+    object PanelFerramentas: TPanel
+      Left = 0
+      Top = 47
+      Width = 193
+      Height = 123
+      Caption = 'Ferramentas'
+      DragKind = dkDock
+      DragMode = dmAutomatic
+      TabOrder = 0
+    end
+  end
+  object PanelMenuCabecalho: TPanel
+    Left = 0
+    Top = 0
+    Width = 640
+    Height = 33
+    Align = alTop
+    BevelOuter = bvNone
+    DockSite = True
+    PopupMenu = PopupMenu1
+    TabOrder = 2
+    object ActionMainMenuBar1: TActionMainMenuBar
+      Left = 0
+      Top = 0
+      Width = 640
+      Height = 25
+      ActionManager = ActionManager1
+      Caption = 'ActionMainMenuBar1'
+      Color = clMenuBar
+      ColorMap.DisabledFontColor = 7171437
+      ColorMap.HighlightColor = clWhite
+      ColorMap.BtnSelectedFont = clBlack
+      ColorMap.UnusedColor = clWhite
+      DragMode = dmAutomatic
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clMenuText
+      Font.Height = -12
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Spacing = 0
+      ExplicitHeight = 49
+    end
+  end
+  object ActionToolBar1: TActionToolBar
+    Left = 0
+    Top = 33
+    Width = 640
+    Height = 23
+    ActionManager = ActionManager1
+    Caption = 'ActionToolBar1'
+    Color = clMenuBar
+    ColorMap.DisabledFontColor = 7171437
+    ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedFont = clBlack
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Spacing = 0
+  end
+  object ActionManager1: TActionManager
+    ActionBars = <
+      item
+        Items.CaptionOptions = coAll
+        Items = <>
+        ActionBar = ActionToolBar1
+      end
+      item
+        Items = <
+          item
+            Items = <
+              item
+                Action = Action1
+                Caption = '&Clientes'
+              end
+              item
+                Action = Action2
+                Caption = '&Fornecedores'
+              end
+              item
+                Action = Action3
+                Caption = '&Produtos'
+              end>
+            Caption = '&Cadastro'
+          end
+          item
+            Items = <
+              item
+                Action = Action5
+                Caption = '&Contas a Receber'
+              end
+              item
+                Action = Action6
+                Caption = '&Relat'#243'rios'
+              end>
+            Caption = '&Financeiro'
+          end>
+        ActionBar = ActionMainMenuBar1
+      end>
+    Left = 216
+    Top = 120
+    StyleName = 'Platform Default'
+    object Action1: TAction
+      Category = 'Cadastro'
+      Caption = 'Clientes'
+      OnExecute = Action1Execute
+    end
+    object Action2: TAction
+      Category = 'Cadastro'
+      Caption = 'Fornecedores'
+      OnExecute = Action2Execute
+    end
+    object Action3: TAction
+      Category = 'Cadastro'
+      Caption = 'Produtos'
+      OnExecute = Action3Execute
+    end
+    object Action5: TAction
+      Category = 'Financeiro'
+      Caption = 'Contas a Receber'
+      OnExecute = Action5Execute
+    end
+    object Action6: TAction
+      Category = 'Financeiro'
+      Caption = 'Relat'#243'rios'
+      OnExecute = Action6Execute
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 216
+    Top = 184
+    object Personlizar1: TMenuItem
+      Caption = 'Personlizar'
+      OnClick = Personlizar1Click
+    end
+  end
+  object CustomizeDlg1: TCustomizeDlg
+    ActionManager = ActionManager1
+    StayOnTop = False
+    Left = 304
+    Top = 192
+  end
+end

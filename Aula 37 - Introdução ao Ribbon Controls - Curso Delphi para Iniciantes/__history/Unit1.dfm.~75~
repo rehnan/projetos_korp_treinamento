@@ -1,0 +1,277 @@
+object Form1: TForm1
+  Left = 438
+  Top = 219
+  Action = EstoqueCadProd
+  Caption = 'Cadastro de Produtos'
+  ClientHeight = 393
+  ClientWidth = 576
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  GlassFrame.Enabled = True
+  OldCreateOrder = False
+  Position = poDesigned
+  OnClick = EstoqueCadProdExecute
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RibbonMenu: TRibbon
+    Left = 0
+    Top = 0
+    Width = 576
+    Height = 143
+    ActionManager = ActManagerToRibbonMenu
+    ApplicationMenu.Menu = RibbonApplicationMenuBar1
+    Caption = 'Ribbon Menu'
+    QuickAccessToolbar.ActionBar = RibbonQuickAccessToolbar1
+    Tabs = <
+      item
+        Caption = 'Estoque'
+        Page = AbaEstoque
+      end
+      item
+        Caption = 'Compras'
+        Page = AbaCompras
+      end
+      item
+        Caption = 'Vendas'
+        Page = AbaVendas
+      end>
+    ExplicitLeft = 400
+    ExplicitTop = 176
+    ExplicitWidth = 0
+    DesignSize = (
+      576
+      143)
+    StyleName = 'Ribbon - Luna'
+    object AbaVendas: TRibbonPage
+      Left = 0
+      Top = 50
+      Width = 575
+      Height = 93
+      Caption = 'Vendas'
+      Index = 2
+      object GVendasNFE: TRibbonGroup
+        Left = 4
+        Top = 3
+        Width = 85
+        Height = 86
+        ActionManager = ActManagerToRibbonMenu
+        Caption = 'NFE'
+        GroupIndex = 0
+      end
+      object GVendasRels: TRibbonGroup
+        Left = 91
+        Top = 3
+        Width = 113
+        Height = 86
+        ActionManager = ActManagerToRibbonMenu
+        Caption = 'Relat'#243'rios'
+        GroupIndex = 1
+      end
+    end
+    object RibbonApplicationMenuBar1: TRibbonApplicationMenuBar
+      ActionManager = ActManagerToRibbonMenu
+      OptionItems = <>
+      RecentItems = <>
+    end
+    object AbaCompras: TRibbonPage
+      Left = 0
+      Top = 50
+      Width = 575
+      Height = 93
+      Caption = 'Compras'
+      Index = 1
+      object GComprasNFE: TRibbonGroup
+        Left = 4
+        Top = 3
+        Width = 97
+        Height = 86
+        ActionManager = ActManagerToRibbonMenu
+        Caption = 'NFE'
+        GroupIndex = 0
+      end
+      object GComprasRels: TRibbonGroup
+        Left = 103
+        Top = 3
+        Width = 120
+        Height = 86
+        ActionManager = ActManagerToRibbonMenu
+        Caption = 'Relat'#243'rios'
+        GroupIndex = 1
+      end
+    end
+    object AbaEstoque: TRibbonPage
+      Left = 0
+      Top = 50
+      Width = 575
+      Height = 93
+      Caption = 'Estoque'
+      Index = 0
+      object GEstoqueMov: TRibbonGroup
+        Left = 4
+        Top = 3
+        Width = 132
+        Height = 86
+        ActionManager = ActManagerToRibbonMenu
+        Caption = 'Movimenta'#231#245'es'
+        GroupIndex = 0
+      end
+      object GEstoqueRels: TRibbonGroup
+        Left = 138
+        Top = 3
+        Width = 132
+        Height = 86
+        ActionManager = ActManagerToRibbonMenu
+        Caption = 'Relat'#243'rios'
+        GroupIndex = 1
+      end
+    end
+    object RibbonQuickAccessToolbar1: TRibbonQuickAccessToolbar
+      Left = 49
+      Top = 1
+      Width = 48
+      Height = 24
+      ActionManager = ActManagerToRibbonMenu
+    end
+  end
+  object ActManagerToRibbonMenu: TActionManager
+    ActionBars = <
+      item
+        Items = <
+          item
+            Action = EstoqueCadProd
+            Caption = '&Cadastro de Produtos'
+          end
+          item
+            Action = EstoqueFornecdores
+            Caption = '&Fornecedores'
+          end
+          item
+            Action = EstoqueQtd
+            Caption = '&Quantidade em Estoque'
+          end>
+        ActionBar = GEstoqueMov
+      end
+      item
+        Items = <
+          item
+            Action = EstoqueRelMov
+            Caption = '&Relat'#243'rio Movimenta'#231#227'o'
+          end>
+        ActionBar = GEstoqueRels
+      end
+      item
+        Items = <
+          item
+            Action = ComprasNFEsEntrada
+            Caption = '&NFEs de Entrada'
+          end>
+        ActionBar = GComprasNFE
+      end
+      item
+        Items = <
+          item
+            Action = ComprasRelCompra
+            Caption = '&Relat'#243'rio de Compras'
+          end>
+        ActionBar = GComprasRels
+      end
+      item
+        Items = <
+          item
+            Action = VendasRelVenda
+            Caption = '&Relat'#243'rio de Vendas'
+          end>
+        ActionBar = GVendasRels
+      end
+      item
+        Items = <
+          item
+            Action = VendasNFEsSaida
+            Caption = '&NFEs de Sa'#237'da'
+          end>
+        ActionBar = GVendasNFE
+      end
+      item
+        Items = <
+          item
+            ChangesAllowed = [caModify]
+            Items = <
+              item
+                Items = <
+                  item
+                    Action = EstoqueCadProd
+                    Caption = '&Cadastro de Produtos'
+                  end>
+                Action = EstoqueCadProd
+                Caption = '&Cadastro de Produtos'
+              end
+              item
+                Items = <
+                  item
+                    Action = ActionMensagemSair
+                    Caption = '&Exibir Mensagem '
+                  end
+                  item
+                    Action = ActionFechaApp
+                  end>
+                Caption = '&Op'#231#245'es de Sa'#237'da'
+              end>
+            Caption = 'ActionClientItem0'
+            KeyTip = 'F'
+          end>
+        ActionBar = RibbonApplicationMenuBar1
+        AutoSize = False
+      end
+      item
+        ActionBar = RibbonQuickAccessToolbar1
+        AutoSize = False
+      end>
+    Left = 400
+    Top = 240
+    StyleName = 'Ribbon - Luna'
+    object EstoqueCadProd: TAction
+      Caption = 'Cadastro de Produtos'
+      OnExecute = EstoqueCadProdExecute
+    end
+    object EstoqueQtd: TAction
+      Caption = 'Quantidade em Estoque'
+      OnExecute = EstoqueQtdExecute
+    end
+    object EstoqueRelMov: TAction
+      Caption = 'Relat'#243'rio Movimenta'#231#227'o'
+      OnExecute = EstoqueRelMovExecute
+    end
+    object ComprasNFEsEntrada: TAction
+      Caption = 'NFEs de Entrada'
+      OnExecute = ComprasNFEsEntradaExecute
+    end
+    object ComprasRelCompra: TAction
+      Caption = 'Relat'#243'rio de Compras'
+      OnExecute = ComprasRelCompraExecute
+    end
+    object VendasRelVenda: TAction
+      Caption = 'Relat'#243'rio de Vendas'
+      OnExecute = VendasRelVendaExecute
+    end
+    object VendasNFEsSaida: TAction
+      Caption = 'NFEs de Sa'#237'da'
+      OnExecute = VendasNFEsSaidaExecute
+    end
+    object EstoqueFornecdores: TAction
+      Caption = 'Fornecedores'
+      OnExecute = EstoqueFornecdoresExecute
+    end
+    object ActionMensagemSair: TAction
+      Caption = 'Exibir Mensagem '
+      OnExecute = ActionMensagemSairExecute
+    end
+    object ActionFechaApp: TAction
+      Caption = 'Fechar Aplica'#231#227'o'
+      OnExecute = ActionFechaAppExecute
+    end
+  end
+end

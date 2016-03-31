@@ -1,0 +1,23 @@
+unit uVenda;
+
+interface
+
+uses Dialogs;
+
+type
+  TVenda = class
+    private
+      VendaIniciada: Boolean;
+    public
+      procedure IniciarVenda;
+      procedure FinalizarVenda;
+  end;
+
+implementation
+
+procedure TVenda.IniciarVenda;
+begin
+
+end;
+
+end.

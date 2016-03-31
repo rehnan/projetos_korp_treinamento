@@ -1,0 +1,23 @@
+unit UValidacoes;
+
+interface
+
+uses
+  SysUtils;
+
+function validaCampoEmBranco(campo:String)  : Boolean; Overload;
+function validaCampoEmBranco(campo:Integer) : Boolean; Overload;
+
+implementation
+function validaCampoEmBranco(campo:String)  : Boolean;
+begin
+  Result := true;
+  if Trim(campo) = '' then Result := false;
+end;
+
+function validaCampoEmBranco(campo:Integer) : Boolean;
+begin
+  Result := true;
+  if Trim(campo) = '' then Result := false;
+end;
+end.

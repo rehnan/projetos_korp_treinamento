@@ -1,0 +1,46 @@
+unit uMeioTransporte;
+
+interface
+
+uses
+  Vcl.Dialogs;
+
+type
+  TMeioTransporte  = class
+  private
+    Fdescricao : String;
+    Fcapacidade : Integer;
+    { Método declarado como estático pois não há nenhuma assinatura no mesmo, assim como default fica como estático}
+    // procedure Mover;
+
+  public
+    constructor create();
+
+    // A assinatura virutal permite que as classes filhas implementem o seu próprio método sobrescrevendo este.
+    procedure Mover; virtual;
+
+  protected
+    // A assinatura abstract indica que não há implementação na classe pai, obrigando a classe filha a implementá-la, semelhante a uma interface.
+    procedure Ligar; virtual; abstract;
+
+  end;
+
+implementation
+
+{ TTMeioTransporte }
+
+constructor TMeioTransporte.create;
+begin
+  inherited; // chama o construtor da classe base
+  Self.descricao := 'Nenhum Selecionado';
+  Self.capacidade := 0;
+  ShowMessage('Construtor Inicializado!');
+end;
+
+procedure TMeioTransporte.Mover;
+begin
+   Ligar();
+   //ShowMessage(Self.descricao+' movendo-se!');
+end;
+
+end.

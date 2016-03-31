@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/03/17 16:18:08.000.228,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/17 16:18:19.000.851,C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\UMain.pas</Transaction>
+    <Transaction>2016/03/17 16:18:19.000.851,C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\UMain.dfm</Transaction>
+    <Transaction>2016/03/17 16:24:44.000.891,C:\Users\dev02\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Main.dproj</Transaction>
+    <Transaction>2016/03/17 16:36:01.000.644,=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Unit1.pas</Transaction>
+    <Transaction>2016/03/17 16:36:12.000.668,C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Unit1.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\UTeste.pas</Transaction>
+    <Transaction>2016/03/17 16:37:03.000.886,=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Unit1.pas</Transaction>
+    <Transaction>2016/03/17 16:37:12.000.488,C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Unit1.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\UCliente.pas</Transaction>
+    <Transaction>2016/03/18 08:18:31.504,=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Unit1.pas</Transaction>
+    <Transaction>2016/03/18 08:18:54.198,C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\UValidacoes.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Aula 40 - Seções Interface e Implementation de uma Unit - Curso Delphi para Iniciantes\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

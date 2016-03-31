@@ -1,0 +1,79 @@
+unit uProduto;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TProduto = class(TCollectionItem)
+    private
+       codigo : Integer;
+       nome : String;
+       preco : Real;
+
+    protected
+      //constructor Create; overload;
+      constructor Create(const pCodigo : Integer; const pNome : String; const pPreco : Real);
+
+      procedure setCodigo(const pCodigo : Integer);
+      procedure setNome(const pNome : String);
+      procedure setPreco(const pPReco : Real);
+
+      function getCodigo() : Integer;
+      function getNome() : String;
+      function getPreco() : Real;
+
+      property vCodigo : Integer read getCodigo write setCodigo;
+      property vNome : String read getNome write setNome;
+      property vPreco : Real read getPreco write setPreco;
+
+  end;
+
+implementation
+
+(*
+constructor TProduto.Create;
+begin
+
+end;
+*)
+
+constructor TProduto.Create(const pCodigo : Integer; const pNome : String; const pPreco : Real);
+begin
+    setCodigo(pCodigo);
+    setNome(pNome);
+    setPreco(pPreco);
+end;
+
+procedure TProduto.setCodigo(const pCodigo : Integer);
+begin
+  Self.codigo := pCodigo;
+end;
+
+procedure TProduto.setNome(const pNome : String);
+begin
+  Self.nome := pNome;
+end;
+
+procedure TProduto.setPreco(const pPreco : Real);
+begin
+  Self.preco := pPReco;
+end;
+
+function TProduto.getCodigo() : Integer;
+begin
+   Result := Self.codigo;
+end;
+
+function TProduto.getNome() : String;
+begin
+  Result := Self.nome;
+end;
+
+function TProduto.getPreco() : Real;
+begin
+    Result := Self.preco;
+end;
+
+end.

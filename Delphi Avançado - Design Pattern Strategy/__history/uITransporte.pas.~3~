@@ -1,0 +1,14 @@
+unit uITransporte;
+
+interface
+
+uses IdMessage;
+
+Type
+  5   ITransporte = interface
+  6     procedure Enviar(Email: TIdMessage);
+  7   end;
+
+implementation
+
+end.
