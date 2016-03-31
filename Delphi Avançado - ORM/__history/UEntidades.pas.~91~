@@ -65,17 +65,25 @@ implementation
 { TProduto }
 
 constructor TProduto.Create;
+var
+  today : TDateTime;
 begin
   inherited Create;
-  dataCriacao :=  TFuncoes.GetInstance.FormatarData(Now);
+  today := Now;
+  TFuncoes.GetInstance.FormatarData(DateToStr(today));
+  //FormatDateTime('yyyy', dtpDataInicial.Date)
+  dataCriacao := ;
 end;
 
 { TFornecedor }
 
 constructor TFornecedor.Create;
+var
+  today : TDateTime;
 begin
   inherited Create;
-  dataCriacao :=  TFuncoes.GetInstance.FormatarData(Now);
+  today := Now;
+  dataCriacao := DateToStr(today);
 end;
 
 end.

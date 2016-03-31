@@ -335,13 +335,24 @@ procedure TForm1.Button2Click(Sender: TObject);
 var
    listaFornecedores : TList<TFornecedor>;
    f : TFornecedor;
-   dataInicial, dataFinal : String;
+   anoInicial, mesInicial, diaInicial, anoFinal, mesFinal, diaFinal : Word;
+   dataInicial, dataFinal : TStringList;
 begin
 
-  dataInicial := TFuncoes.GetInstance.FormatarData(dtpDataInicial.Date);
-  dataFinal := TFuncoes.GetInstance.FormatarData(dtpDataFinal.Date);
 
+  TFuncoes.GetInstance.FormatarData(dtpDataInicial.Date);
+
+  dataInicial := StrToint(FormatDateTime('yyyy', dtpDataInicial.Date));
+  mesInicial := StrToint(FormatDateTime('mm',  dtpDataInicial.Date));
+  diaInicial := StrToint(FormatDateTime('dd',  dtpDataInicial.Date));
+
+  anoFinal := StrToint(FormatDateTime('yyyy', dtpDataFinal.Date));
+  mesFinal := StrToint(FormatDateTime('mm',  dtpDataFinal.Date));
+  diaFinal := StrToint(FormatDateTime('dd',  dtpDataFinal.Date));
+ 
   listaFornecedores := TList<TFornecedor>.Create;
+
+  //ShowMessage(DateToStr(dtpDataInicial.Date));
 
   try
        { http://www.tmssoftware.biz/business/aurelius/doc/web/less_than_or_equals_to.htm
@@ -352,8 +363,8 @@ begin
 
       GerenciadorFornecedores.OwnsObjects := False;
       listaFornecedores := gerenciadorFornecedores.Find<TFornecedor>
-      .Add(TExpression.GreaterOrEqual('DATACRIACAO', dataInicial))
-      .Add(TExpression.LessOrEqual('DATACRIACAO', dataFinal))
+      .Add(TExpression.GreaterOrEqual('DATACRIACAO', anoInicial + mesInicial + diaInicial))
+      .Add(TExpression.LessOrEqual('DATACRIACAO', anoFinal + mesFinal + diaFinal))
       .List;
 
       frmGriFornecedores := TFrmFornecedores.Create(Self);

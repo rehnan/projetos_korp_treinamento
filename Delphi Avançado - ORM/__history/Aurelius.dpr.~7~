@@ -5,8 +5,7 @@ uses
   FrmPrincipal in 'FrmPrincipal.pas' {Form1},
   UEntidades in 'UEntidades.pas',
   UConexao in 'UConexao.pas',
-  uVariavelDeClasse in 'uVariavelDeClasse.pas',
-  uFuncoes in 'uFuncoes.pas';
+  uVariavelDeClasse in 'uVariavelDeClasse.pas';
 
 {$R *.res}
 

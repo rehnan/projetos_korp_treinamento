@@ -1,9 +1,9 @@
 ﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 		<PropertyGroup>
-			<ProjectGuid>{6CC32921-B15A-4EE8-9E92-4B7E35B94E8A}</ProjectGuid>
+			<ProjectGuid>{258D2408-ACC6-4980-84C1-F02F32113A1B}</ProjectGuid>
 			<ProjectVersion>13.4</ProjectVersion>
 			<FrameworkType>VCL</FrameworkType>
-			<MainSource>Aurelius.dpr</MainSource>
+			<MainSource>Project1.dpr</MainSource>
 			<Base>True</Base>
 			<Config Condition="'$(Config)'==''">Debug</Config>
 			<Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -50,7 +50,7 @@
 			<DCC_UsePackage>cxLibraryRS16;dxSkinSevenRS16;dxSkinSummer2008RS16;dxPSCoreRS16;dxPScxTLLnkRS16;dxPScxGridLnkRS16;dxPsPrVwAdvRS16;cxPivotGridOLAPRS16;cxPageControlRS16;dxSkinVS2010RS16;vclimg;dxSkinDevExpressStyleRS16;dxSkinWhiteprintRS16;dxComnRS16;vcldb;dxSkinBlackRS16;dxBarExtDBItemsRS16;dxSkinXmas2008BlueRS16;dxSkinOffice2007BlueRS16;dxSkinOffice2007GreenRS16;cxDataRS16;cxBarEditItemRS16;cxPageControldxBarPopupMenuRS16;dxDockingRS16;dxPSDBTeeChartRS16;dxPSLnksRS16;lmdrtrtlx;dxBarExtItemsRS16;dxPSTeeChartRS16;dxPSdxLCLnkRS16;cxVerticalGridRS16;dxSkinSharpRS16;dxSkinOffice2007BlackRS16;dxorgcRS16;dxSkinBlueprintRS16;dxPScxExtCommonRS16;dxNavBarRS16;dxdbtrRS16;dxSkinFoggyRS16;dxPScxSSLnkRS16;dxSkinDarkSideRS16;dxSkinscxPCPainterRS16;vclactnband;dxPScxSchedulerLnkRS16;dxPSdxDBTVLnkRS16;vclie;bindcompvcl;dxSkinSilverRS16;dsnapcon;dcldxSkinsCoreRS16;dxSkinLilianRS16;vclx;dxSkinValentineRS16;dxFlowChartRS16;dxGDIPlusRS16;dxSkinSharpPlusRS16;dxdborRS16;dxPScxVGridLnkRS16;dxLayoutControlRS16;dxPScxPivotGridLnkRS16;dxCoreRS16;cxExportRS16;dxBarRS16;dxSkinsdxNavBarPainterRS16;cxSpreadSheetRS16;cxTreeListdxBarPopupMenuRS16;TeeDB;FlexCelXE2;dxSkinCoffeeRS16;vclib;dxRibbonRS16;cxTreeListRS16;dxSkinOffice2007SilverRS16;dxSkinsdxRibbonPainterRS16;vcldsnap;dxSkinBlueRS16;dxSkinDarkRoomRS16;dxSkinscxSchedulerPainterRS16;vcl;dxSkinDevExpressDarkStyleRS16;gtDocEngD16;cxSchedulerGridRS16;webdsnap;lmdrtdocking;dxSkinsdxDLPainterRS16;dxSkinTheAsphaltWorldRS16;dxtrmdRS16;dxSkinMoneyTwinsRS16;dxSkinOffice2010BlackRS16;dxSkinPumpkinRS16;adortl;dxSkinHighContrastRS16;dxSkiniMaginaryRS16;dxPSdxDBOCLnkRS16;dxSkinLondonLiquidSkyRS16;dxSkinsdxBarPainterRS16;Tee;dxSkinGlassOceansRS16;dxSkinLiquidSkyRS16;dxSkinsCoreRS16;cxPivotGridChartRS16;dxPScxCommonRS16;dxmdsRS16;dxPSPrVwRibbonRS16;cxGridRS16;cxEditorsRS16;TeeUI;cxPivotGridRS16;dxSpellCheckerRS16;dxSkinSevenClassicRS16;QImport3RT_D16;cxSchedulerRS16;dxSkinOffice2010SilverRS16;vcltouch;websnap;dxSkinOffice2007PinkRS16;VclSmp;dxSkinSpringTimeRS16;dxTabbedMDIRS16;dxSkinStardustRS16;dxPSdxOCLnkRS16;dxSkinOffice2010BlueRS16;dxPSdxFCLnkRS16;dxThemeRS16;dxPScxPCProdRS16;dxSkinCaramelRS16;dxSkinMcSkinRS16;lmdrtl;dxBarDBNavRS16;$(DCC_UsePackage)</DCC_UsePackage>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Base_Win32)'!=''">
-			<DCC_UsePackage>fsADO16;spdNFE_DXE2;cxLibraryRS16;dxSkinSevenRS16;xdata;pfcorePkgDXE2;frxBDE16;dxSkinSummer2008RS16;dxPSCoreRS16;dxPScxTLLnkRS16;dxPScxGridLnkRS16;dxPsPrVwAdvRS16;cxPivotGridOLAPRS16;cxPageControlRS16;fsIBX16;dxSkinVS2010RS16;vclimg;dxSkinDevExpressStyleRS16;dxSkinWhiteprintRS16;fmi;dxComnRS16;EzSpecials_DXE2;vcldb;dxSkinBlackRS16;dxBarExtDBItemsRS16;advchartdXE2;xhHierCubeRtl160;xhChartRtl160;dxSkinXmas2008BlueRS16;dxSkinOffice2007BlueRS16;spdGov16_DXE2;CloudService;dxSkinOffice2007GreenRS16;FmxTeeUI;cxDataRS16;cxBarEditItemRS16;ACBr_NFe2;cxPageControldxBarPopupMenuRS16;dxDockingRS16;dxPSDBTeeChartRS16;dxPSLnksRS16;lmdrtrtlx;dxBarExtItemsRS16;dxPSTeeChartRS16;dxPSdxLCLnkRS16;cxVerticalGridRS16;dxSkinSharpRS16;dxSkinOffice2007BlackRS16;dxorgcRS16;dxSkinBlueprintRS16;acQueryBuilderDbExD16;dxPScxExtCommonRS16;EzBasic_DXE2;vcldbx;GMDXE2;gtFRExpD16;dxNavBarRS16;acQueryBuilderD16;msprovider160;dxdbtrRS16;dxSkinFoggyRS16;dxPScxSSLnkRS16;fsBDE16;frxDB16;dxSkinDarkSideRS16;xhCntrlsRtl160;dxSkinscxPCPainterRS16;fs16;vclactnband;FMXTee;sfd2012;dxPScxSchedulerLnkRS16;dxPSdxDBTVLnkRS16;synapse;frxcs16;ACBrComum;vclie;xhExportDsgn160;acQueryBuilderADOD16;bindcompvcl;nxpHost;nxpGate;dxSkinSilverRS16;dclfrxTee16;dsnapcon;PCN2;Octopus.Domain.Core.Entities;pkPessoa;dcldxSkinsCoreRS16;Octopus.Infrastructure.Core.Data;dxSkinLilianRS16;vclx;nxpClient;dxSkinValentineRS16;pfmgrPkgDXE2;dxFlowChartRS16;frxIBX16;dxGDIPlusRS16;dxSkinSharpPlusRS16;dxdborRS16;dxPScxVGridLnkRS16;dxLayoutControlRS16;dxPScxPivotGridLnkRS16;dxCoreRS16;cxExportRS16;dxBarRS16;dxSkinsdxNavBarPainterRS16;ACBrDiversos;cxSpreadSheetRS16;cxTreeListdxBarPopupMenuRS16;TeeDB;FlexCelXE2;acQueryBuilderDsgnADOD16;dxSkinCoffeeRS16;frxTee16;vclib;inetdbbde;dxRibbonRS16;xhExportRtl160;BarcodeStudio;cxTreeListRS16;dxSkinOffice2007SilverRS16;dxSkinsdxRibbonPainterRS16;vcldsnap;wupdpkgdXE2;dac160;dxSkinBlueRS16;frxADO16;vclribbon;frxe16;dxSkinDarkRoomRS16;acQueryBuilderDsgnD16;dxSkinscxSchedulerPainterRS16;ACBr_SPED;vcl;dxSkinDevExpressDarkStyleRS16;CodeSiteExpressPkg;unidac160;gtDocEngD16;fsTee16;ACBr_Sintegra;cxSchedulerGridRS16;webdsnap;lmdrtdocking;dxSkinsdxDLPainterRS16;dxSkinTheAsphaltWorldRS16;dxtrmdRS16;ACBr_NFSe;BarcodeFastReport;dxSkinMoneyTwinsRS16;dxSkinOffice2010BlackRS16;ACBr_SPED_Importar;dxSkinPumpkinRS16;adortl;acQueryBuilderDsgnSDD16;dxSkinHighContrastRS16;frxDBX16;ACBrOpenSSL;dxSkiniMaginaryRS16;ACBrCapicom;frx16;dxPSdxDBOCLnkRS16;dxSkinLondonLiquidSkyRS16;acQueryBuilderDsgnDbExD16;dxSkinsdxBarPainterRS16;Tee;dxSkinGlassOceansRS16;dxSkinLiquidSkyRS16;ACBr_CTe;Octopus.Presenter.Core.UI;dxSkinsCoreRS16;svnui;cxPivotGridChartRS16;dxPScxCommonRS16;aqueryxe2;dxmdsRS16;dxPSPrVwRibbonRS16;SqlDir160;acQueryBuilderSDD16;cxGridRS16;cxEditorsRS16;TeeUI;cxPivotGridRS16;EzPlanit_DXE2;dxSpellCheckerRS16;dxSkinSevenClassicRS16;QImport3RT_D16;cxSchedulerRS16;dxSkinOffice2010SilverRS16;vcltouch;websnap;dxSkinOffice2007PinkRS16;ExceptionExpert16;VclSmp;dxSkinSpringTimeRS16;dxTabbedMDIRS16;fsDB16;dxSkinStardustRS16;dxPSdxOCLnkRS16;dxSkinOffice2010BlueRS16;dxPSdxFCLnkRS16;dxThemeRS16;dxPScxPCProdRS16;svn;dxSkinCaramelRS16;dxSkinMcSkinRS16;bdertl;FortesReport;lmdrtl;dxBarDBNavRS16;$(DCC_UsePackage)</DCC_UsePackage>
+			<DCC_UsePackage>fsADO16;spdNFE_DXE2;cxLibraryRS16;dxSkinSevenRS16;xdata;pfcorePkgDXE2;frxBDE16;dxSkinSummer2008RS16;dxPSCoreRS16;dxPScxTLLnkRS16;dxPScxGridLnkRS16;dxPsPrVwAdvRS16;cxPivotGridOLAPRS16;cxPageControlRS16;fsIBX16;dxSkinVS2010RS16;vclimg;dxSkinDevExpressStyleRS16;dxSkinWhiteprintRS16;fmi;dxComnRS16;EzSpecials_DXE2;vcldb;dxSkinBlackRS16;dxBarExtDBItemsRS16;advchartdXE2;xhHierCubeRtl160;xhChartRtl160;dxSkinXmas2008BlueRS16;dxSkinOffice2007BlueRS16;spdGov16_DXE2;CloudService;dxSkinOffice2007GreenRS16;FmxTeeUI;cxDataRS16;cxBarEditItemRS16;ACBr_NFe2;cxPageControldxBarPopupMenuRS16;dxDockingRS16;dxPSDBTeeChartRS16;dxPSLnksRS16;lmdrtrtlx;dxBarExtItemsRS16;dxPSTeeChartRS16;dxPSdxLCLnkRS16;cxVerticalGridRS16;dxSkinSharpRS16;dxSkinOffice2007BlackRS16;dxorgcRS16;dxSkinBlueprintRS16;acQueryBuilderDbExD16;dxPScxExtCommonRS16;EzBasic_DXE2;vcldbx;GMDXE2;gtFRExpD16;dxNavBarRS16;acQueryBuilderD16;msprovider160;dxdbtrRS16;dxSkinFoggyRS16;dxPScxSSLnkRS16;fsBDE16;frxDB16;dxSkinDarkSideRS16;xhCntrlsRtl160;dxSkinscxPCPainterRS16;fs16;vclactnband;FMXTee;sfd2012;dxPScxSchedulerLnkRS16;dxPSdxDBTVLnkRS16;synapse;frxcs16;ACBrComum;vclie;xhExportDsgn160;acQueryBuilderADOD16;bindcompvcl;nxpHost;nxpGate;dxSkinSilverRS16;dclfrxTee16;dsnapcon;PCN2;Octopus.Domain.Core.Entities;dcldxSkinsCoreRS16;Octopus.Infrastructure.Core.Data;dxSkinLilianRS16;vclx;nxpClient;dxSkinValentineRS16;pfmgrPkgDXE2;dxFlowChartRS16;frxIBX16;dxGDIPlusRS16;dxSkinSharpPlusRS16;dxdborRS16;dxPScxVGridLnkRS16;dxLayoutControlRS16;dxPScxPivotGridLnkRS16;dxCoreRS16;cxExportRS16;dxBarRS16;dxSkinsdxNavBarPainterRS16;ACBrDiversos;cxSpreadSheetRS16;cxTreeListdxBarPopupMenuRS16;TeeDB;FlexCelXE2;acQueryBuilderDsgnADOD16;dxSkinCoffeeRS16;Development.ORM;frxTee16;vclib;inetdbbde;dxRibbonRS16;xhExportRtl160;BarcodeStudio;cxTreeListRS16;dxSkinOffice2007SilverRS16;dxSkinsdxRibbonPainterRS16;vcldsnap;wupdpkgdXE2;dac160;dxSkinBlueRS16;frxADO16;vclribbon;frxe16;dxSkinDarkRoomRS16;acQueryBuilderDsgnD16;dxSkinscxSchedulerPainterRS16;ACBr_SPED;vcl;dxSkinDevExpressDarkStyleRS16;CodeSiteExpressPkg;unidac160;gtDocEngD16;fsTee16;ACBr_Sintegra;cxSchedulerGridRS16;webdsnap;lmdrtdocking;dxSkinsdxDLPainterRS16;dxSkinTheAsphaltWorldRS16;dxtrmdRS16;ACBr_NFSe;BarcodeFastReport;dxSkinMoneyTwinsRS16;dxSkinOffice2010BlackRS16;ACBr_SPED_Importar;dxSkinPumpkinRS16;adortl;acQueryBuilderDsgnSDD16;dxSkinHighContrastRS16;frxDBX16;ACBrOpenSSL;dxSkiniMaginaryRS16;ACBrCapicom;frx16;dxPSdxDBOCLnkRS16;dxSkinLondonLiquidSkyRS16;acQueryBuilderDsgnDbExD16;dxSkinsdxBarPainterRS16;Tee;dxSkinGlassOceansRS16;dxSkinLiquidSkyRS16;ACBr_CTe;Octopus.Presenter.Core.UI;dxSkinsCoreRS16;svnui;cxPivotGridChartRS16;dxPScxCommonRS16;aqueryxe2;dxmdsRS16;dxPSPrVwRibbonRS16;SqlDir160;acQueryBuilderSDD16;cxGridRS16;cxEditorsRS16;TeeUI;cxPivotGridRS16;EzPlanit_DXE2;dxSpellCheckerRS16;dxSkinSevenClassicRS16;QImport3RT_D16;cxSchedulerRS16;dxSkinOffice2010SilverRS16;vcltouch;websnap;dxSkinOffice2007PinkRS16;ExceptionExpert16;VclSmp;dxSkinSpringTimeRS16;dxTabbedMDIRS16;fsDB16;dxSkinStardustRS16;dxPSdxOCLnkRS16;dxSkinOffice2010BlueRS16;dxPSdxFCLnkRS16;dxThemeRS16;dxPScxPCProdRS16;svn;dxSkinCaramelRS16;dxSkinMcSkinRS16;bdertl;FortesReport;lmdrtl;dxBarDBNavRS16;$(DCC_UsePackage)</DCC_UsePackage>
 			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
 			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
 			<VerInfo_Locale>1033</VerInfo_Locale>
@@ -65,8 +65,6 @@
 			<DCC_RemoteDebug>true</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-			<VerInfo_Locale>1033</VerInfo_Locale>
 			<DCC_RemoteDebug>false</DCC_RemoteDebug>
 		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
@@ -79,16 +77,10 @@
 			<DelphiCompile Include="$(MainSource)">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
-			<DCCReference Include="FrmPrincipal.pas">
-				<Form>Form1</Form>
+			<DCCReference Include="uFrmFornecedores.pas">
+				<Form>FrmFornecedores</Form>
 				<FormType>dfm</FormType>
 			</DCCReference>
-			<DCCReference Include="UEntidades.pas"/>
-			<DCCReference Include="UConexao.pas"/>
-			<DCCReference Include="uVariavelDeClasse.pas"/>
-			<DCCReference Include="uFuncoes.pas"/>
-			<None Include="ModelSupport_Aurelius\default.txaPackage"/>
-			<None Include="ModelSupport_Aurelius\default.txvpck"/>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -134,11 +126,15 @@
 						<VersionInfoKeys Name="Comments"/>
 					</VersionInfoKeys>
 					<Excluded_Packages>
+						<Excluded_Packages Name="C:\Users\dev02\Documents\Rad Studio\9.0\Bpl\Octopus.Domain.Core.Entities.bpl">(untitled)</Excluded_Packages>
 						<Excluded_Packages Name="C:\Users\dev02\Documents\Rad Studio\9.0\Bpl\Octopus.Domain.Financeiro.RLBoleto.bpl">(untitled)</Excluded_Packages>
-						<Excluded_Packages Name="C:\Users\dev02\Documents\Rad Studio\9.0\Bpl\Octopus.Services.License.bpl">(untitled)</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDBXDriversEnt160.bpl">Embarcadero Enterprise Driver Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclDataSnapProviderClient160.bpl">Embarcadero DBExpress DataSnap Provider Client Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
 					</Excluded_Packages>
 					<Source>
-						<Source Name="MainSource">Aurelius.dpr</Source>
+						<Source Name="MainSource">Project1.dpr</Source>
 					</Source>
 				</Delphi.Personality>
 				<Deployment/>
@@ -146,7 +142,6 @@
 					<Platform value="Win64">False</Platform>
 					<Platform value="Win32">True</Platform>
 				</Platforms>
-				<ModelSupport>True</ModelSupport>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>
 		</ProjectExtensions>

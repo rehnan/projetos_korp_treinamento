@@ -339,9 +339,13 @@ var
 begin
 
   dataInicial := TFuncoes.GetInstance.FormatarData(dtpDataInicial.Date);
+  ShowMessage(dataInicial);
   dataFinal := TFuncoes.GetInstance.FormatarData(dtpDataFinal.Date);
+  ShowMessage(dataFinal);
 
   listaFornecedores := TList<TFornecedor>.Create;
+
+  //ShowMessage(DateToStr(dtpDataInicial.Date));
 
   try
        { http://www.tmssoftware.biz/business/aurelius/doc/web/less_than_or_equals_to.htm

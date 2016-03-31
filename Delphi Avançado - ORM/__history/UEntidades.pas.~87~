@@ -3,7 +3,7 @@ unit UEntidades;
 interface
 
 uses
-  Aurelius.Mapping.Attributes, System.SysUtils, System.Variants, System.Classes, uFuncoes;
+  Aurelius.Mapping.Attributes, System.SysUtils, System.Variants, System.Classes;
 type
   [Entity]
   [Automapping]
@@ -65,17 +65,24 @@ implementation
 { TProduto }
 
 constructor TProduto.Create;
+var
+  today : TDateTime;
 begin
   inherited Create;
-  dataCriacao :=  TFuncoes.GetInstance.FormatarData(Now);
+  today := Now;
+
+  dataCriacao := DateToStr(today);
 end;
 
 { TFornecedor }
 
 constructor TFornecedor.Create;
+var
+  today : TDateTime;
 begin
   inherited Create;
-  dataCriacao :=  TFuncoes.GetInstance.FormatarData(Now);
+  today := Now;
+  dataCriacao := DateToStr(today);
 end;
 
 end.
