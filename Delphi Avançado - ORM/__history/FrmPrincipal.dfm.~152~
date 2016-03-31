@@ -29,7 +29,7 @@ object Form1: TForm1
     Top = 39
     Width = 513
     Height = 314
-    ActivePage = tabFornecedores
+    ActivePage = tabProdutos
     TabOrder = 0
     object tabFornecedores: TTabSheet
       Caption = 'Fornecedores'
@@ -187,6 +187,7 @@ object Form1: TForm1
           Width = 129
           Height = 21
           Date = 42459.677852870370000000
+          Format = 'dd-MM-yyyy'
           Time = 42459.677852870370000000
           TabOrder = 1
         end

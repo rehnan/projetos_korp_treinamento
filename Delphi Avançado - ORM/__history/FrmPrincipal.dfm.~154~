@@ -187,6 +187,7 @@ object Form1: TForm1
           Width = 129
           Height = 21
           Date = 42459.677852870370000000
+          Format = 'dd-MM-yyyy'
           Time = 42459.677852870370000000
           TabOrder = 1
         end

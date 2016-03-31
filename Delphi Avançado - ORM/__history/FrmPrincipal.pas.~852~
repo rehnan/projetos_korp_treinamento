@@ -330,7 +330,6 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 var
    listaFornecedores : TList<TFornecedor>;
-   f : TFornecedor;
    anoInicial, mesInicial, diaInicial, anoFinal, mesFinal, diaFinal : Word;
 begin
   anoInicial := StrToint(FormatDateTime('yyyy', dtpDataInicial.Date));
@@ -346,26 +345,15 @@ begin
   //ShowMessage(DateToStr(dtpDataInicial.Date));
 
   try
-       { http://www.tmssoftware.biz/business/aurelius/doc/web/less_than_or_equals_to.htm
-         uses que devem ser adicionadas:
-             Aurelius.Criteria.Expression,
-             Aurelius.Criteria.Base,
-       }
-
       GerenciadorFornecedores.OwnsObjects := False;
       listaFornecedores := gerenciadorFornecedores.Find<TFornecedor>
-      .Add(TExpression.GreaterOrEqual('DATACRIACAO', EncodeDate(anoInicial, mesInicial, diaInicial)))
-      .Add(TExpression.LessOrEqual('DATACRIACAO', EncodeDate(anoFinal, mesFinal, diaFinal)))
+      .Add(TExpression.GreaterOrEqual('DATACRIACAO', EncodeDate(ano, mes, dia)))
+      .Add(TExpression.LessOrEqual('DATACRIACAO', EncodeDate(ano, mes, dia)))
       .List;
 
-      for f in listaFornecedores do
-      begin
-         ShowMessage(f.Razaosocial);
-      end;
 
-
-
-
+      //http://www.tmssoftware.biz/business/aurelius/doc/web/less_than_or_equals_to.htm
+      //gerenciadorFornecedores.Find<TFornecedor>.Add
 
   finally
     FreeAndNil(listaFornecedores);

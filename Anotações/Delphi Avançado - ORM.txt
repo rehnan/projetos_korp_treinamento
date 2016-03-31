@@ -47,3 +47,7 @@ TLinq pertencente ao Framework (Aurelius.Criteria.Linq), possui diversos comando
   
 OwnsObjects : Se o valor desta propriedade é True, todos os objetos gerenciados são destruídos com o 
 gerenciador no momento em que o mesmo for destruído, caso contrário, os objetos continuam na memória. Por isso é definida como falsa
+
+
+Decrementar um dia da data recuperada;
+ xDataFinal := IncMonth(dtpDataInicial.DateTime,-1);

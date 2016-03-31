@@ -346,12 +346,6 @@ begin
   //ShowMessage(DateToStr(dtpDataInicial.Date));
 
   try
-       { http://www.tmssoftware.biz/business/aurelius/doc/web/less_than_or_equals_to.htm
-         uses que devem ser adicionadas:
-             Aurelius.Criteria.Expression,
-             Aurelius.Criteria.Base,
-       }
-
       GerenciadorFornecedores.OwnsObjects := False;
       listaFornecedores := gerenciadorFornecedores.Find<TFornecedor>
       .Add(TExpression.GreaterOrEqual('DATACRIACAO', EncodeDate(anoInicial, mesInicial, diaInicial)))
@@ -364,8 +358,8 @@ begin
       end;
 
 
-
-
+      //http://www.tmssoftware.biz/business/aurelius/doc/web/less_than_or_equals_to.htm
+      //gerenciadorFornecedores.Find<TFornecedor>.Add
 
   finally
     FreeAndNil(listaFornecedores);

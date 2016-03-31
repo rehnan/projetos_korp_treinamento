@@ -351,7 +351,6 @@ begin
              Aurelius.Criteria.Expression,
              Aurelius.Criteria.Base,
        }
-
       GerenciadorFornecedores.OwnsObjects := False;
       listaFornecedores := gerenciadorFornecedores.Find<TFornecedor>
       .Add(TExpression.GreaterOrEqual('DATACRIACAO', EncodeDate(anoInicial, mesInicial, diaInicial)))
