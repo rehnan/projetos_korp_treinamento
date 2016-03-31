@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/11/03 14:53:10.000.214,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/11/16 15:44:59.000.610,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/11/17 11:25:50.000.508,=C:\Users\dev05\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2015/12/30 15:09:26.000.333,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/21 11:27:18.000.685,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 13:10:15.000.182,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 13:42:04.000.296,=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 13:42:31.000.591,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\FrmPrincipal.pas=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 13:42:31.000.591,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\FrmPrincipal.dfm=C:\Users\dev02\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2016/03/23 13:42:41.000.167,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Aurelius.dproj=C:\Users\dev02\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2016/03/23 13:43:55.000.632,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 13:44:07.000.715,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\UEntidades.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 14:16:19.000.570,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 14:16:25.000.531,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\UConexao.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 15:03:50.000.251,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Unit1.pas</Transaction>
+    <Transaction>2016/03/23 15:04:32.000.577,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\uVariavelDeClasse.pas=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Unit1.pas</Transaction>
+    <Transaction>2016/03/28 08:48:05.000.682,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\ModelSupport_Aurelius\default.txaPackage</Transaction>
+    <Transaction>2016/03/28 08:48:10.000.985,=C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\ModelSupport_Aurelius\default.txvpck</Transaction>
+  </Transactions>
+</BorlandProject>

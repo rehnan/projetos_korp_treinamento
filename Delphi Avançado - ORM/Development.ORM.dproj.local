@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2015/11/11 16:33:23.000.273,=rtl.dcp</Transaction>
+    <Transaction>2016/03/28 14:52:49.746,=rtl.dcp</Transaction>
+    <Transaction>2016/03/28 14:53:19.013,C:\Users\dev02\Desktop\Projetos\Delphi Avançado - ORM\Development.ORM.dproj=C:\Users\dev02\Documents\RAD Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2016/03/28 14:54:18.496,=C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - Pacotes\uPessoa.pas</Transaction>
+    <Transaction>2016/03/28 14:56:05.980,C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - Pacotes\uPessoa.pas=</Transaction>
+    <Transaction>2016/03/28 15:00:53.733,=C:\Users\dev02\Desktop\Projetos\Delphi Intermediário - Pacotes\uPessoa.pas</Transaction>
+    <Transaction>2016/03/28 15:01:10.346,=rtl.dcp</Transaction>
+  </Transactions>
+</BorlandProject>
